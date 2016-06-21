@@ -9,6 +9,7 @@ VANTAGENS
 >Podemos realizar validações indivíduais ou em grupos
 
 >É possível levantar uma exceção ou captura-las
+
 ### Version
 1.0.0
 
