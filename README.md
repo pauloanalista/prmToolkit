@@ -11,7 +11,7 @@ VANTAGENS
 >É possível levantar uma exceção ou captura-las
 
 ### Version
-1.0.0
+1.0.3
 
 ### Autor
 Paulo Rogério
