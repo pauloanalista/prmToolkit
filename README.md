@@ -21,7 +21,7 @@ Paulo Rogério
 Para instalar o, abra o prompt de comando Package Manager Console do seu Visual Studio e digite o comando abaixo:
 
 ```sh
-Install-Package prmToolkit -Version 1.0.1
+https://www.nuget.org/packages/prmToolkit.ValidateArgument/
 ```
 
 ### Exemplo de como usar
