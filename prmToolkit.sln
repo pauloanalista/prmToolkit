@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit", "prmToolkit\prmToolkit.csproj", "{AADBAA0C-47BB-4BD9-AFD4-82AE948358EC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.Test", "prmToolkit.Test\prmToolkit.Test.csproj", "{7FDCC469-39AD-45C3-A6C1-F8630F11F95C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.Validation", "prmToolkit.Validation\prmToolkit.Validation.csproj", "{9FD0BBE8-D644-4D55-9F02-5533BDED461D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AADBAA0C-47BB-4BD9-AFD4-82AE948358EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AADBAA0C-47BB-4BD9-AFD4-82AE948358EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AADBAA0C-47BB-4BD9-AFD4-82AE948358EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AADBAA0C-47BB-4BD9-AFD4-82AE948358EC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7FDCC469-39AD-45C3-A6C1-F8630F11F95C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7FDCC469-39AD-45C3-A6C1-F8630F11F95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FDCC469-39AD-45C3-A6C1-F8630F11F95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FDCC469-39AD-45C3-A6C1-F8630F11F95C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FD0BBE8-D644-4D55-9F02-5533BDED461D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FD0BBE8-D644-4D55-9F02-5533BDED461D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FD0BBE8-D644-4D55-9F02-5533BDED461D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FD0BBE8-D644-4D55-9F02-5533BDED461D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("prmToolkit")]
+[assembly: AssemblyTitle("prmToolkit.ValidateArgument")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("prmToolkit")]
+[assembly: AssemblyProduct("prmToolkit.ValidateArgument")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("aadbaa0c-47bb-4bd9-afd4-82ae948358ec")]
+[assembly: Guid("9fd0bbe8-d644-4d55-9f02-5533bded461d")]
 
 // Version information for an assembly consists of the following four values:
 //

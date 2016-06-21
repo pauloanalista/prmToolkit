@@ -1,0 +1,4 @@
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Validation\bin\Release\prmToolkit.Validation.dll
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Validation\bin\Release\prmToolkit.Validation.pdb
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Validation\obj\Release\prmToolkit.Validation.dll
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Validation\obj\Release\prmToolkit.Validation.pdb

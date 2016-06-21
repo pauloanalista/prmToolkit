@@ -1,0 +1,4 @@
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.ValidateArgument\bin\Release\prmToolkit.ValidateArgument.dll
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.ValidateArgument\bin\Release\prmToolkit.ValidateArgument.pdb
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.ValidateArgument\obj\Release\prmToolkit.ValidateArgument.dll
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.ValidateArgument\obj\Release\prmToolkit.ValidateArgument.pdb

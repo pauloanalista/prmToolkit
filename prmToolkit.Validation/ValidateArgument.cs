@@ -36,7 +36,7 @@ namespace prmToolkit.Validation
 
             return exceptionCollection;
         }
-        
+
         /// <summary>
         /// Garante que ambos os objetos sejam iguais
         /// </summary>

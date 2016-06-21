@@ -56,9 +56,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\prmToolkit\prmToolkit.csproj">
-      <Project>{aadbaa0c-47bb-4bd9-afd4-82ae948358ec}</Project>
-      <Name>prmToolkit</Name>
+    <ProjectReference Include="..\prmToolkit.Validation\prmToolkit.Validation.csproj">
+      <Project>{9fd0bbe8-d644-4d55-9f02-5533bded461d}</Project>
+      <Name>prmToolkit.Validation</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
