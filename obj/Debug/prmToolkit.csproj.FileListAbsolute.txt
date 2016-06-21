@@ -1,0 +1,4 @@
+C:\_Projetos\Paulo\prmToolkit\prmToolkit\bin\Debug\prmToolkit.dll
+C:\_Projetos\Paulo\prmToolkit\prmToolkit\bin\Debug\prmToolkit.pdb
+C:\_Projetos\Paulo\prmToolkit\prmToolkit\obj\Debug\prmToolkit.dll
+C:\_Projetos\Paulo\prmToolkit\prmToolkit\obj\Debug\prmToolkit.pdb
