@@ -1,0 +1,14 @@
+C:\_Projetos\Paulo\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Test.dll
+C:\_Projetos\Paulo\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Test.pdb
+C:\_Projetos\Paulo\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.dll
+C:\_Projetos\Paulo\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.pdb
+C:\_Projetos\Paulo\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.csprojResolveAssemblyReference.cache
+C:\_Projetos\Paulo\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.dll
+C:\_Projetos\Paulo\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.pdb
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Test.dll
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Test.pdb
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.dll
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.pdb
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.csprojResolveAssemblyReference.cache
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.dll
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.pdb

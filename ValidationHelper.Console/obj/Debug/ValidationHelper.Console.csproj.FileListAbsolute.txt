@@ -1,0 +1,11 @@
+C:\_Projetos\Paulo\prmToolkit\ValidationHelper.Console\bin\Debug\ValidationHelper.Console.exe.config
+C:\_Projetos\Paulo\prmToolkit\ValidationHelper.Console\bin\Debug\ValidationHelper.Console.exe
+C:\_Projetos\Paulo\prmToolkit\ValidationHelper.Console\bin\Debug\ValidationHelper.Console.pdb
+C:\_Projetos\Paulo\prmToolkit\ValidationHelper.Console\bin\Debug\prmToolkit.dll
+C:\_Projetos\Paulo\prmToolkit\ValidationHelper.Console\bin\Debug\prmToolkit.pdb
+C:\_Projetos\Paulo\prmToolkit\ValidationHelper.Console\obj\Debug\ValidationHelper.Console.csprojResolveAssemblyReference.cache
+C:\_Projetos\Paulo\prmToolkit\ValidationHelper.Console\obj\Debug\ValidationHelper.Console.exe
+C:\_Projetos\Paulo\prmToolkit\ValidationHelper.Console\obj\Debug\ValidationHelper.Console.pdb
+C:\_Projetos\Paulo\_GitHub\prmToolkit\ValidationHelper.Console\bin\Debug\ValidationHelper.Console.exe.config
+C:\_Projetos\Paulo\_GitHub\prmToolkit\ValidationHelper.Console\obj\Debug\ValidationHelper.Console.exe
+C:\_Projetos\Paulo\_GitHub\prmToolkit\ValidationHelper.Console\obj\Debug\ValidationHelper.Console.pdb

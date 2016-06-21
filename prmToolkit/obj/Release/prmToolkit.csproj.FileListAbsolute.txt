@@ -1,0 +1,9 @@
+C:\_Projetos\Paulo\prmToolkit\prmToolkit\bin\Release\prmToolkit.dll
+C:\_Projetos\Paulo\prmToolkit\prmToolkit\bin\Release\prmToolkit.pdb
+C:\_Projetos\Paulo\prmToolkit\prmToolkit\obj\Release\prmToolkit.dll
+C:\_Projetos\Paulo\prmToolkit\prmToolkit\obj\Release\prmToolkit.pdb
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit\bin\Release\prmToolkit.dll
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit\bin\Release\prmToolkit.pdb
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit\obj\Release\prmToolkit.csprojResolveAssemblyReference.cache
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit\obj\Release\prmToolkit.dll
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit\obj\Release\prmToolkit.pdb
