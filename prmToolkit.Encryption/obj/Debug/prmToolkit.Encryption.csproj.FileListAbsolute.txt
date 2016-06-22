@@ -1,0 +1,5 @@
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Encryption\bin\Debug\prmToolkit.Encryption.dll
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Encryption\bin\Debug\prmToolkit.Encryption.pdb
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Encryption\obj\Debug\prmToolkit.Encryption.csprojResolveAssemblyReference.cache
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Encryption\obj\Debug\prmToolkit.Encryption.dll
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Encryption\obj\Debug\prmToolkit.Encryption.pdb

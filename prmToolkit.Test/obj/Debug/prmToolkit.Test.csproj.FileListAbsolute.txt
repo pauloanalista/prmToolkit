@@ -1,0 +1,9 @@
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Test\bin\Debug\prmToolkit.Test.dll
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Test\bin\Debug\prmToolkit.Test.pdb
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Test\bin\Debug\prmToolkit.Encryption.dll
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Test\bin\Debug\prmToolkit.Validation.dll
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Test\bin\Debug\prmToolkit.Encryption.pdb
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Test\bin\Debug\prmToolkit.Validation.pdb
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Test\obj\Debug\prmToolkit.Test.csprojResolveAssemblyReference.cache
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Test\obj\Debug\prmToolkit.Test.dll
+C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Test\obj\Debug\prmToolkit.Test.pdb

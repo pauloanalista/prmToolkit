@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.Test", "prmToolk
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.Validation", "prmToolkit.Validation\prmToolkit.Validation.csproj", "{9FD0BBE8-D644-4D55-9F02-5533BDED461D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.Encryption", "prmToolkit.Encryption\prmToolkit.Encryption.csproj", "{A60CCFF2-7B31-49DD-BE2F-A4017F91C011}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9FD0BBE8-D644-4D55-9F02-5533BDED461D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FD0BBE8-D644-4D55-9F02-5533BDED461D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FD0BBE8-D644-4D55-9F02-5533BDED461D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A60CCFF2-7B31-49DD-BE2F-A4017F91C011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A60CCFF2-7B31-49DD-BE2F-A4017F91C011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A60CCFF2-7B31-49DD-BE2F-A4017F91C011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A60CCFF2-7B31-49DD-BE2F-A4017F91C011}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
