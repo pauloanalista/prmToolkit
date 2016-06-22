@@ -2,28 +2,24 @@
 
 prmToolkit É um projeto responsável por dar apoio a outros projetos.
 
+# Classes
+- ValidateArgument
+- Encryption
+
 # ValidateArgument
 Classe responsável por gerenciar validações de argumentos.
 
-VANTAGENS
->Podemos realizar validações indivíduais ou em grupos
+Podemos realizar validações indivíduais ou em grupos.
 
->É possível levantar uma exceção ou captura-las
+É possível levantar uma exceção ou captura-las.
 
-### Version
-1.0.3
-
-### Autor
-Paulo Rogério
-
-### Installation
+### Installation - ValidateArgument
 
 Para instalar o, abra o prompt de comando Package Manager Console do seu Visual Studio e digite o comando abaixo:
 
 ```sh
 Install-Package prmToolkit.ValidateArgument
 ```
-
 ### Exemplo de como usar
 
 ```sh
@@ -80,3 +76,45 @@ namespace prmToolkit.Test
     }
 }
 ```
+# Encryption
+Classe responsável por criptografar e descriptografar dados ou mensagens
+
+### Installation - Encryption
+
+Para instalar o, abra o prompt de comando Package Manager Console do seu Visual Studio e digite o comando abaixo:
+
+```sh
+Install-Package prmToolkit.Encryption
+```
+### Exemplo de como usar
+
+```sh
+using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using prmToolkit.Encryption;
+
+namespace prmToolkit.Test
+{
+    [TestClass]
+    public class MD5CryptTest
+    {
+        [TestMethod]
+        public void MD5Crypt_Encrypt_Decrypt()
+        {
+            string senha = "Paulo Rogério";
+
+            string senhaCriptografada = MD5Crypt.Encrypt(senha);
+
+            string senhaDesCriptografada = MD5Crypt.Decrypt(senhaCriptografada);
+
+
+            string senhaMD5 = MD5Crypt.EncryptMD5(senha);
+
+            Assert.AreEqual(senhaCriptografada, "sE0hI8fXaecNxoHI2IokuQ==");
+            Assert.AreEqual(senhaDesCriptografada, senha);
+            Assert.AreEqual(senhaMD5, "69103C8FA326DB8B39CB87A6492390C6");
+        }
+    }
+}
+```
+
