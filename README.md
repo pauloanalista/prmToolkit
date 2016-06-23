@@ -31,7 +31,8 @@ namespace prmToolkit.Test
         [TestMethod]
         public void GetExceptionCollection()
         {
-            var result = ValidateArgument.GetListException(
+            //O método GetListException, é responsável por validar parametros e obter uma lista de exceções caso os critérios não sejam atentidos, é possível 	    //capturar o resultado em uma variável.
+	    var result = ValidateArgument.GetListException(
                                     ValidateArgument.IsNotNull(null, "object is required"),
                                     ValidateArgument.IsEmail("email_invalid", "email invalid")
 
@@ -50,7 +51,9 @@ namespace prmToolkit.Test
 
             try
             {
-                ValidateArgument.IsOkContinue(
+                //O método IsOkContinue, é responsável por validar parametros e disparar a lista de exceções caso os critérios não sejam atendidos
+		//Neste caso é necessário utilizar o try catch para capturar as exceções
+		ValidateArgument.IsOkContinue(
                                             ValidateArgument.IsNotNull(null, "object is required"),
                                             ValidateArgument.IsEmail("email_invalid", "email invalid")
                                             );
@@ -66,7 +69,8 @@ namespace prmToolkit.Test
         {
             try
             {
-                ValidateArgument.IsNotNull(null, "object is required", true);
+                //É possível fazer validações pontuais e subir uma exceção, mas para isso é necessário passar o último parametro como true
+		ValidateArgument.IsNotNull(null, "object is required", true);
             }
             catch (Exception ex)
             {
