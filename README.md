@@ -15,7 +15,7 @@ Podemos realizar validações indivíduais ou em grupos.
 
 ### Installation - ValidateArgument
 
-Para instalar o, abra o prompt de comando Package Manager Console do seu Visual Studio e digite o comando abaixo:
+Para instalar, abra o prompt de comando Package Manager Console do seu Visual Studio e digite o comando abaixo:
 
 ```sh
 Install-Package prmToolkit.ValidateArgument
@@ -81,7 +81,7 @@ Classe responsável por criptografar e descriptografar dados ou mensagens
 
 ### Installation - Encryption
 
-Para instalar o, abra o prompt de comando Package Manager Console do seu Visual Studio e digite o comando abaixo:
+Para instalar, abra o prompt de comando Package Manager Console do seu Visual Studio e digite o comando abaixo:
 
 ```sh
 Install-Package prmToolkit.Encryption
