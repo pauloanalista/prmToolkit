@@ -2,3 +2,16 @@ C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Validation\bin\Debug\prmToolkit
 C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Validation\bin\Debug\prmToolkit.Validation.pdb
 C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Validation\obj\Debug\prmToolkit.Validation.dll
 C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Validation\obj\Debug\prmToolkit.Validation.pdb
+C:\Users\Paulo Rogério\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Validation\bin\Debug\prmToolkit.Validation.dll
+C:\Users\Paulo Rogério\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Validation\bin\Debug\prmToolkit.Validation.pdb
+C:\Users\Paulo Rogério\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Validation\obj\Debug\prmToolkit.Validation.dll
+C:\Users\Paulo Rogério\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Validation\obj\Debug\prmToolkit.Validation.pdb
+C:\Users\Paulo Rogério\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Validation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Paulo Rogério\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Validation\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\bin\Debug\prmToolkit.Validation.dll
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\bin\Debug\prmToolkit.Validation.pdb
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\obj\Debug\prmToolkit.Validation.csprojResolveAssemblyReference.cache
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\obj\Debug\prmToolkit.Validation.dll
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\obj\Debug\prmToolkit.Validation.pdb

@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace prmToolkit.Validation
 {
@@ -16,13 +16,22 @@ namespace prmToolkit.Validation
         /// <summary>
         /// Método responsável por levantar uma lista de exceções, caso todos os parametros estejam ok, ele deixa seguir para linha seguinte do código.
         /// </summary>
+        /// <param name="returnManyExceptions">True - Retorna várias exceções agrupadas, ou seja, cada exceção tem sua mensagem. False - Retorna uma única exceção com todas as mensagens agrupadas no formato JSON.</param>
         /// <param name="validations">Lista de validações a serem realizadas</param>
-        /// <returns></returns>
-        public static bool IsOkContinue(params Exception[] validations)
+        /// <returns>Levanta uma exceção com mensagens agrupadas ou um grupo de exceções com cada uma com sua mensagem.</returns>
+        public static bool IsOkContinue(bool returnManyExceptions, params Exception[] validations)
         {
             var exceptionCollection = validations.ToList().Where(validation => validation != null).ToList();
 
-            throw new AggregateException(exceptionCollection);
+            if (returnManyExceptions == true)
+            {
+                throw new AggregateException(exceptionCollection);
+            }
+
+            string messageList = JsonConvert.SerializeObject(exceptionCollection.Select(x => x.Message).ToList());
+
+            throw new Exception(messageList);
+
         }
 
         /// <summary>
@@ -30,7 +39,7 @@ namespace prmToolkit.Validation
         /// </summary>
         /// <param name="validations">Lista de validações a serem realizadas</param>
         /// <returns>Retorna a lista de erros causada pelas validações</returns>
-        public static List<Exception> GetListException(params Exception[] validations)
+        public static List<Exception> GetExceptionList(params Exception[] validations)
         {
             var exceptionCollection = validations.ToList().Where(validation => validation != null).ToList();
 
@@ -38,377 +47,16 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que ambos os objetos sejam iguais
+        /// Baseado em uma lista de validações ele retorna a lista de mensagens de erros sem levantar a exceção
         /// </summary>
-        public static Exception IsEquals(object object1, object object2, string message, bool generateIndividualException = false)
+        /// <param name="validations">Lista de validações a serem realizadas</param>
+        /// <returns>Retorna a lista de mensagens de erros causada pelas validações</returns>
+        public static List<string> GetMessagesFromExceptions(params Exception[] validations)
         {
-            if (!object1.Equals(object2))
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
+            var messageList = validations.ToList().Where(validation => validation != null).Select(x => x.Message).ToList();
 
-                return new InvalidOperationException(message);
-            }
-
-            return null;
+            return messageList;
         }
 
-        /// <summary>
-        /// Garante que ambos os objetos não sejam iguais
-        /// </summary>
-        public static Exception IsNotEquals(object object1, object object2, string message, bool generateIndividualException = false)
-        {
-            if (object1.Equals(object2))
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new InvalidOperationException(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que o valor passado seja verdadeiro
-        /// </summary>
-        public static Exception IsTrue(bool boolValue, string message, bool generateIndividualException = false)
-        {
-            if (!boolValue)
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new InvalidOperationException(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que o valor passado seja falso
-        /// </summary>
-        public static Exception IsFalse(bool boolValue, string message, bool generateIndividualException = false)
-        {
-            if (boolValue)
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new InvalidOperationException(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que o valor passado atenda o comprimento máximo
-        /// </summary>
-        public static Exception IsLength(string stringValue, int maximum, string message, bool generateIndividualException = false)
-        {
-            int length = stringValue.Trim().Length;
-            if (length > maximum)
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new InvalidOperationException(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que o valor passado atenda o comprimento minimo e máximo
-        /// </summary>
-        public static Exception IsLength(string stringValue, int minimum, int maximum, string message, bool generateIndividualException = false)
-        {
-            if (String.IsNullOrEmpty(stringValue))
-                stringValue = String.Empty;
-
-            int length = stringValue.Trim().Length;
-            if (length < minimum || length > maximum)
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new InvalidOperationException(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que a expressão regular é valida
-        /// </summary>
-        public static Exception IsMatches(string pattern, string stringValue, string message, bool generateIndividualException = false)
-        {
-            Regex regex = new Regex(pattern);
-
-            if (!regex.IsMatch(stringValue))
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new InvalidOperationException(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que o valor passado é nulo
-        /// </summary>
-        public static Exception IsNull(string stringValue, string message, bool generateIndividualException = false)
-        {
-            if (stringValue != null)
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new InvalidOperationException(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que o valor passado não é nulo
-        /// </summary>
-        public static Exception IsNotNull(object object1, string message, bool generateIndividualException = false)
-        {
-            if (object1 == null)
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new InvalidOperationException(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que o valor passado não é nulo ou vazio
-        /// </summary>
-        public static Exception IsNullOrEmpty(string stringValue, string message, bool generateIndividualException = false)
-        {
-            if (stringValue == null || stringValue.Trim().Length == 0)
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new InvalidOperationException(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que o valor passado é vazio
-        /// </summary>
-        public static Exception IsEmpty(string stringValue, string message, bool generateIndividualException = false)
-        {
-            if (stringValue == null || stringValue.Trim().Length > 0)
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new InvalidOperationException(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que o valor passado atenda o limite entre um minimo e máximo
-        /// </summary>
-        public static Exception Range(double value, double minimum, double maximum, string message, bool generateIndividualException = false)
-        {
-            if (value < minimum || value > maximum)
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new InvalidOperationException(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que o valor passado atenda o limite entre um minimo e máximo
-        /// </summary>
-        public static Exception Range(float value, float minimum, float maximum, string message, bool generateIndividualException = false)
-        {
-            if (value < minimum || value > maximum)
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new InvalidOperationException(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que o valor passado atenda o limite entre um minimo e máximo
-        /// </summary>
-        public static Exception Range(int value, int minimum, int maximum, string message, bool generateIndividualException = false)
-        {
-            if (value < minimum || value > maximum)
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new InvalidOperationException(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que o valor passado atenda o limite entre um minimo e máximo
-        /// </summary>
-        public static Exception Range(long value, long minimum, long maximum, string message, bool generateIndividualException = false)
-        {
-            if (value < minimum || value > maximum)
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new InvalidOperationException(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que o valor é um e-mail valido
-        /// </summary>
-        public static Exception IsEmail(string email, string message, bool generateIndividualException = false)
-        {
-            if (!Regex.IsMatch(email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase))
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new Exception(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que o valor o primeiro valor seja maior que o segundo valor
-        /// </summary>
-        public static Exception IsGreaterThan(int value1, int value2, string message, bool generateIndividualException = false)
-        {
-            if (!(value1 > value2))
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new Exception(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que o valor o primeiro valor seja maior que o segundo valor
-        /// </summary>
-        public static Exception IsGreaterThan(decimal value1, decimal value2, string message, bool generateIndividualException = false)
-        {
-            if (!(value1 > value2))
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new Exception(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que o valor o primeiro valor seja maior ou igual que o segundo valor
-        /// </summary>
-        public static Exception IsGreaterOrEqualThan(int value1, int value2, string message, bool generateIndividualException = false)
-        {
-            if (!(value1 >= value2))
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new Exception(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que seja uma url válida. Só irá validar caso o parametro seja preenchido
-        /// </summary>
-        public static Exception IsUrl(string url, string message, bool generateIndividualException = false)
-        {
-            // Do not validate if no URL is provided
-            // You can call AssertNotEmpty before this if you want
-            if (String.IsNullOrEmpty(url))
-                return null;
-
-            var regex = @"^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$";
-
-            if (!Regex.IsMatch(url, regex, RegexOptions.IgnoreCase))
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new Exception(message);
-            }
-
-            return null;
-        }
     }
 }

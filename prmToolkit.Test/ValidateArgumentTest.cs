@@ -8,30 +8,26 @@ namespace prmToolkit.Test
     public class ValidateArgumentTest
     {
         [TestMethod]
-        public void GetExceptionCollection()
+        public void ObterListaDeMensagensDasExcecoes()
         {
-            var result = ValidateArgument.GetListException(
-                                    ValidateArgument.IsNotNull(null, "object is required"),
-                                    ValidateArgument.IsEmail("email_invalid", "email invalid")
-
-
+            var result = ValidateArgument.GetMessagesFromExceptions(
+                                    Validate.IsNotNull(null, "object is required"),
+                                    Validate.IsEmail("email_invalid", "email invalid")
                 );
 
             Assert.IsNotNull(result, "object required");
             Assert.IsTrue(result.Count == 2, "There should be two exceptions");
-
         }
 
 
         [TestMethod]
-        public void ThrowExceptionCollection()
+        public void LancarGrupoDeExcecoes()
         {
-
             try
             {
-                ValidateArgument.IsOkContinue(
-                                            ValidateArgument.IsNotNull(null, "object is required"),
-                                            ValidateArgument.IsEmail("email_invalid", "email invalid")
+                ValidateArgument.IsOkContinue(true,
+                                            Validate.IsNotNull(null, "object is required"),
+                                            Validate.IsEmail("email_invalid", "email invalid")
                                             );
             }
             catch (Exception ex)
@@ -41,11 +37,28 @@ namespace prmToolkit.Test
         }
 
         [TestMethod]
-        public void ThrowIndividualException()
+        public void LancarUnicaExcecaoComMensagensDoGrupoDeExcecoes()
         {
             try
             {
-                ValidateArgument.IsNotNull(null, "object is required", true);
+                ValidateArgument.IsOkContinue(false,
+                                            Validate.IsNotNull(null, "object is required"),
+                                            Validate.IsEmail("email_invalid", "email invalid")
+                                            );
+            }
+            catch (Exception ex)
+            {
+                
+                Assert.IsTrue(ex.Message.Contains("object is required") && ex.Message.Contains("email invalid"), "There should be two exceptions");
+            }
+        }
+
+        [TestMethod]
+        public void LancarExcecaoIndividual()
+        {
+            try
+            {
+                Validate.IsNotNull(null, "object is required", true);
             }
             catch (Exception ex)
             {
