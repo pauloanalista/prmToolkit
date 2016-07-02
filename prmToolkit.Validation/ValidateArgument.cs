@@ -23,11 +23,13 @@ namespace prmToolkit.Validation
         {
             var exceptionCollection = validations.ToList().Where(validation => validation != null).ToList();
 
+            //Caso não tenha erros sai do método
             if (exceptionCollection.Count == 0)
             {
                 return;
             }
 
+            //Levanta exceção em grupo
             if (returnManyExceptions == true)
             {
                 throw new AggregateException(exceptionCollection);
@@ -35,6 +37,7 @@ namespace prmToolkit.Validation
 
             string messageList = JsonConvert.SerializeObject(new { Mensagens = exceptionCollection.Select(x => x.Message).ToList() });
 
+            //Levanta exceção individual
             throw new Exception(messageList);
 
         }
