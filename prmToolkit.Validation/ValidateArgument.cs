@@ -19,16 +19,21 @@ namespace prmToolkit.Validation
         /// <param name="returnManyExceptions">True - Retorna várias exceções agrupadas, ou seja, cada exceção tem sua mensagem. False - Retorna uma única exceção com todas as mensagens agrupadas no formato JSON.</param>
         /// <param name="validations">Lista de validações a serem realizadas</param>
         /// <returns>Levanta uma exceção com mensagens agrupadas ou um grupo de exceções com cada uma com sua mensagem.</returns>
-        public static bool IsOkContinue(bool returnManyExceptions, params Exception[] validations)
+        public static void IsOkContinue(bool returnManyExceptions, params Exception[] validations)
         {
             var exceptionCollection = validations.ToList().Where(validation => validation != null).ToList();
+
+            if (exceptionCollection.Count == 0)
+            {
+                return;
+            }
 
             if (returnManyExceptions == true)
             {
                 throw new AggregateException(exceptionCollection);
             }
 
-            string messageList = JsonConvert.SerializeObject(exceptionCollection.Select(x => x.Message).ToList());
+            string messageList = JsonConvert.SerializeObject(new { Mensagens = exceptionCollection.Select(x => x.Message).ToList() });
 
             throw new Exception(messageList);
 
