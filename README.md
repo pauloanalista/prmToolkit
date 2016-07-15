@@ -22,59 +22,49 @@ Install-Package prmToolkit.ValidateArgument
 ```
 ### Exemplo de como usar
 
+Neste exemplo caso algum critério não seja atendido irá levantar uma única exceção com todas as mensagens
 ```sh
-namespace prmToolkit.Test
-{
-    [TestClass]
-    public class ValidateArgumentTest
-    {
-        [TestMethod]
+public AdicionarFuncionarioResponse AdicionarFuncionario(AdicionarFuncionarioRequest request)
+        {
+            ValidateArgument.IsOkContinue(false,
+                                            Validate.IsNull(request, Mensagens.ARGUMENTO_REQUEST_OBRIGATORIO),
+                                            //Valida dados do funcionario
+                                            Validate.IsNull(request.Funcionario, Mensagens.ARGUMENTO_FUNCIONARIO_OBRIGATORIO),
+                                            Validate.IsNullOrEmpty(request.Funcionario.Nome, Mensagens.ARGUMENTO_FUNCIONARIO_NOME_OBRIGATORIO),
+                                            Validate.IsNullOrEmpty(request.Funcionario.Email, Mensagens.ARGUMENTO_FUNCIONARIO_EMAIL_OBRIGATORIO),
+                                            Validate.IsNullOrEmpty(request.Funcionario.Senha, Mensagens.ARGUMENTO_FUNCIONARIO_SENHA_OBRIGATORIO),
+                                            Validate.IsNullOrEmpty(request.Funcionario.Cpf, Mensagens.ARGUMENTO_FUNCIONARIO_CPF_OBRIGATORIO),
+                                            //Valida dados do perfil
+                                            Validate.IsNull(request.EnumPerfil, Mensagens.ARGUMENTO_PERFIL_OBRIGATORIO),
+                                            //Valida dados da loja
+                                            Validate.IsNotGuid(request.LojaId, Mensagens.ARGUMENTO_LOJA_ID_OBRIGATORIO)
+                                            );
+
+            //Criptografa a senha
+            request.Funcionario.Senha = MD5Crypt.EncryptMD5(request.Funcionario.Senha);
+
+            return _repositorioFuncionario.AdicionarFuncionario(request);
+        }
+
+```
+Neste exemplo caso algum critério não seja atendido irá levantar retornar uma lista de mensagens sem levantar a exceção
+```sh
+[TestMethod]
         public void ObterListaDeMensagensDasExcecoes()
         {
             var result = ValidateArgument.GetMessagesFromExceptions(
-                                    Validate.IsNotNull(null, "object is required"),
-                                    Validate.IsEmail("email_invalid", "email invalid")
+                                    Validate.IsNull(null, "object is required"),
+                                    Validate.IsNotEmail("email_invalid", "email invalid")
                 );
 
             Assert.IsNotNull(result, "object required");
             Assert.IsTrue(result.Count == 2, "There should be two exceptions");
         }
+```
 
-
-        [TestMethod]
-        public void LancarGrupoDeExcecoes()
-        {
-            try
-            {
-                ValidateArgument.IsOkContinue(true,
-                                            Validate.IsNotNull(null, "object is required"),
-                                            Validate.IsEmail("email_invalid", "email invalid")
-                                            );
-            }
-            catch (Exception ex)
-            {
-                Assert.AreEqual(ex.Message, "Um ou mais erros.", "There should be two exceptions");
-            }
-        }
-
-        [TestMethod]
-        public void LancarUnicaExcecaoComMensagensDoGrupoDeExcecoes()
-        {
-            try
-            {
-                ValidateArgument.IsOkContinue(false,
-                                            Validate.IsNotNull(null, "object is required"),
-                                            Validate.IsEmail("email_invalid", "email invalid")
-                                            );
-            }
-            catch (Exception ex)
-            {
-                
-                Assert.IsTrue(ex.Message.Contains("object is required") && ex.Message.Contains("email invalid"), "There should be two exceptions");
-            }
-        }
-
-        [TestMethod]
+Podemos também trabalhar com exceções indivíduais
+```sh
+ [TestMethod]
         public void LancarExcecaoIndividual()
         {
             try
@@ -85,10 +75,6 @@ namespace prmToolkit.Test
             {
                 Assert.AreEqual(ex.Message, "object is required", "is expected value not null");
             }
-        }
-    }
-}
-
 ```
 # Encryption
 Classe responsável por criptografar e descriptografar dados ou mensagens
