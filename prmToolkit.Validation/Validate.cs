@@ -6,27 +6,9 @@ namespace prmToolkit.Validation
     public class Validate
     {
         /// <summary>
-        /// Garante que ambos os objetos sejam iguais
+        /// Se são iguais levanta exceção
         /// </summary>
         public static Exception IsEquals(object object1, object object2, string message, bool generateIndividualException = false)
-        {
-            if (!object1.Equals(object2))
-            {
-                if (generateIndividualException == true)
-                {
-                    throw new InvalidOperationException(message);
-                }
-
-                return new InvalidOperationException(message);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Garante que ambos os objetos não sejam iguais
-        /// </summary>
-        public static Exception IsNotEquals(object object1, object object2, string message, bool generateIndividualException = false)
         {
             if (object1.Equals(object2))
             {
@@ -42,11 +24,11 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que o valor passado seja verdadeiro
+        /// Se não são iguais levanta exceção
         /// </summary>
-        public static Exception IsTrue(bool boolValue, string message, bool generateIndividualException = false)
+        public static Exception IsNotEquals(object object1, object object2, string message, bool generateIndividualException = false)
         {
-            if (!boolValue)
+            if (!object1.Equals(object2))
             {
                 if (generateIndividualException == true)
                 {
@@ -60,9 +42,9 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que o valor passado seja falso
+        /// Se o valor passado for verdadeiro, levanta exceção
         /// </summary>
-        public static Exception IsFalse(bool boolValue, string message, bool generateIndividualException = false)
+        public static Exception IsTrue(bool boolValue, string message, bool generateIndividualException = false)
         {
             if (boolValue)
             {
@@ -78,7 +60,25 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que o valor passado atenda o comprimento máximo
+        /// Se for falso levanta exceção
+        /// </summary>
+        public static Exception IsFalse(bool boolValue, string message, bool generateIndividualException = false)
+        {
+            if (boolValue == false)
+            {
+                if (generateIndividualException == true)
+                {
+                    throw new InvalidOperationException(message);
+                }
+
+                return new InvalidOperationException(message);
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Se passar do comprimento máximo levanta exceção
         /// </summary>
         public static Exception IsLength(string stringValue, int maximum, string message, bool generateIndividualException = false)
         {
@@ -97,7 +97,7 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que o valor passado atenda o comprimento minimo e máximo
+        /// Se não atender o valor mínimo e máximo levanta exceção
         /// </summary>
         public static Exception IsLength(string stringValue, int minimum, int maximum, string message, bool generateIndividualException = false)
         {
@@ -119,13 +119,13 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que a expressão regular é valida
+        /// Se a expressão regular não for válida levanta exceção
         /// </summary>
-        public static Exception IsMatches(string pattern, string stringValue, string message, bool generateIndividualException = false)
+        public static Exception IsNotMatches(string pattern, string stringValue, string message, bool generateIndividualException = false)
         {
             Regex regex = new Regex(pattern);
 
-            if (!regex.IsMatch(stringValue))
+            if (regex.IsMatch(stringValue) == false)
             {
                 if (generateIndividualException == true)
                 {
@@ -139,11 +139,11 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que o valor passado é nulo
+        /// Se for nulo levanta exceção
         /// </summary>
         public static Exception IsNull(string stringValue, string message, bool generateIndividualException = false)
         {
-            if (stringValue != null)
+            if (stringValue == null)
             {
                 if (generateIndividualException == true)
                 {
@@ -157,11 +157,29 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que o valor passado não é nulo
+        /// Se for nulo levanta exceção
+        /// </summary>
+        public static Exception IsNull(object objectValue, string message, bool generateIndividualException = false)
+        {
+            if (objectValue == null)
+            {
+                if (generateIndividualException == true)
+                {
+                    throw new InvalidOperationException(message);
+                }
+
+                return new InvalidOperationException(message);
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Se não for nulo levanta exceção
         /// </summary>
         public static Exception IsNotNull(object object1, string message, bool generateIndividualException = false)
         {
-            if (object1 == null)
+            if (object1 != null)
             {
                 if (generateIndividualException == true)
                 {
@@ -175,7 +193,7 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que o valor passado não é nulo ou vazio
+        /// Se for nulo ou vazio, levanta exceção
         /// </summary>
         public static Exception IsNullOrEmpty(string stringValue, string message, bool generateIndividualException = false)
         {
@@ -193,11 +211,11 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que o valor passado é vazio
+        /// Se é vazio levanta exceção
         /// </summary>
         public static Exception IsEmpty(string stringValue, string message, bool generateIndividualException = false)
         {
-            if (stringValue == null || stringValue.Trim().Length > 0)
+            if (stringValue == null || stringValue.Trim().Length <= 0)
             {
                 if (generateIndividualException == true)
                 {
@@ -211,9 +229,9 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que o valor passado atenda o limite entre um minimo e máximo
+        /// Se não atende o limite entre um minimo e máximo
         /// </summary>
-        public static Exception Range(double value, double minimum, double maximum, string message, bool generateIndividualException = false)
+        public static Exception IsNotRange(double value, double minimum, double maximum, string message, bool generateIndividualException = false)
         {
             if (value < minimum || value > maximum)
             {
@@ -229,9 +247,9 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que o valor passado atenda o limite entre um minimo e máximo
+        /// Se não atende o limite entre um minimo e máximo
         /// </summary>
-        public static Exception Range(float value, float minimum, float maximum, string message, bool generateIndividualException = false)
+        public static Exception IsNotRange(float value, float minimum, float maximum, string message, bool generateIndividualException = false)
         {
             if (value < minimum || value > maximum)
             {
@@ -247,9 +265,9 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que o valor passado atenda o limite entre um minimo e máximo
+        /// Se não atende o limite entre um minimo e máximo
         /// </summary>
-        public static Exception Range(int value, int minimum, int maximum, string message, bool generateIndividualException = false)
+        public static Exception IsNotRange(int value, int minimum, int maximum, string message, bool generateIndividualException = false)
         {
             if (value < minimum || value > maximum)
             {
@@ -265,9 +283,9 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que o valor passado atenda o limite entre um minimo e máximo
+        /// Se não atende o limite entre um minimo e máximo
         /// </summary>
-        public static Exception Range(long value, long minimum, long maximum, string message, bool generateIndividualException = false)
+        public static Exception IsNotRange(long value, long minimum, long maximum, string message, bool generateIndividualException = false)
         {
             if (value < minimum || value > maximum)
             {
@@ -283,9 +301,9 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que o valor é um e-mail valido
+        /// Se não for um email válido levanta exceção
         /// </summary>
-        public static Exception IsEmail(string email, string message, bool generateIndividualException = false)
+        public static Exception IsNotEmail(string email, string message, bool generateIndividualException = false)
         {
             if (!Regex.IsMatch(email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase))
             {
@@ -301,9 +319,9 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que o valor o primeiro valor seja maior que o segundo valor
+        /// Se o primeiro valor não for maior que o segundo levanta exceção
         /// </summary>
-        public static Exception IsGreaterThan(int value1, int value2, string message, bool generateIndividualException = false)
+        public static Exception IsNotGreaterThan(int value1, int value2, string message, bool generateIndividualException = false)
         {
             if (!(value1 > value2))
             {
@@ -319,9 +337,9 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que o valor o primeiro valor seja maior que o segundo valor
+        /// Se o primeiro valor não for maior que o segundo levanta exceção
         /// </summary>
-        public static Exception IsGreaterThan(decimal value1, decimal value2, string message, bool generateIndividualException = false)
+        public static Exception IsNotGreaterThan(decimal value1, decimal value2, string message, bool generateIndividualException = false)
         {
             if (!(value1 > value2))
             {
@@ -337,9 +355,9 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que o valor o primeiro valor seja maior ou igual que o segundo valor
+        /// Se o primeiro valor não for maior ou igual que o segundo levanta exceção
         /// </summary>
-        public static Exception IsGreaterOrEqualThan(int value1, int value2, string message, bool generateIndividualException = false)
+        public static Exception IsNotGreaterOrEqualThan(int value1, int value2, string message, bool generateIndividualException = false)
         {
             if (!(value1 >= value2))
             {
@@ -355,9 +373,9 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que seja uma url válida. Só irá validar caso o parametro seja preenchido
+        /// Se não for uma url válida, levanta uma exceção.
         /// </summary>
-        public static Exception IsUrl(string url, string message, bool generateIndividualException = false)
+        public static Exception IsNotUrl(string url, string message, bool generateIndividualException = false)
         {
             // Do not validate if no URL is provided
             // You can call AssertNotEmpty before this if you want
@@ -380,11 +398,31 @@ namespace prmToolkit.Validation
         }
 
         /// <summary>
-        /// Garante que contém o valor informado
+        /// Se não conter o o valor informado, levanta uma exceção
         /// </summary>
-        public static Exception Contains(string value1, string expected, string message, bool generateIndividualException = false)
+        public static Exception IsNotContains(string value1, string expected, string message, bool generateIndividualException = false)
         {
             if (!value1.Contains(expected))
+            {
+                if (generateIndividualException == true)
+                {
+                    throw new InvalidOperationException(message);
+                }
+
+                return new InvalidOperationException(message);
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Se não for um Guid, levanta uma exceção
+        /// </summary>
+        public static Exception IsNotGuid(string stringValue, string message, bool generateIndividualException = false)
+        {
+            Guid x;
+
+            if (Guid.TryParse(stringValue, out x) == false)
             {
                 if (generateIndividualException == true)
                 {

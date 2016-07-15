@@ -12,3 +12,4 @@ C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Encryption\bin\De
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Encryption\bin\Debug\prmToolkit.Encryption.pdb
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Encryption\obj\Debug\prmToolkit.Encryption.dll
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Encryption\obj\Debug\prmToolkit.Encryption.pdb
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Encryption\obj\Debug\prmToolkit.Encryption.csprojResolveAssemblyReference.cache

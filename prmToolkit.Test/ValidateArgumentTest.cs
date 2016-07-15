@@ -11,8 +11,8 @@ namespace prmToolkit.Test
         public void ObterListaDeMensagensDasExcecoes()
         {
             var result = ValidateArgument.GetMessagesFromExceptions(
-                                    Validate.IsNotNull(null, "object is required"),
-                                    Validate.IsEmail("email_invalid", "email invalid")
+                                    Validate.IsNull(null, "object is required"),
+                                    Validate.IsNotEmail("email_invalid", "email invalid")
                 );
 
             Assert.IsNotNull(result, "object required");
@@ -26,8 +26,8 @@ namespace prmToolkit.Test
             try
             {
                 ValidateArgument.IsOkContinue(true,
-                                            Validate.IsNotNull(null, "object is required"),
-                                            Validate.IsEmail("email_invalid", "email invalid")
+                                            Validate.IsNull(null, "object is required"),
+                                            Validate.IsNotEmail("email_invalid", "email invalid")
                                             );
             }
             catch (Exception ex)
@@ -42,8 +42,8 @@ namespace prmToolkit.Test
             try
             {
                 ValidateArgument.IsOkContinue(false,
-                                            Validate.IsNotNull(null, "object is required"),
-                                            Validate.IsEmail("email_invalid", "email invalid")
+                                            Validate.IsNull(null, "object is required"),
+                                            Validate.IsNotEmail("email_invalid", "email invalid")
                                             );
             }
             catch (Exception ex)
