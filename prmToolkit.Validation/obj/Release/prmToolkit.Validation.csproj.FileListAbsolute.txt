@@ -2,3 +2,10 @@ C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Validation\bin\Release\prmToolk
 C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Validation\bin\Release\prmToolkit.Validation.pdb
 C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Validation\obj\Release\prmToolkit.Validation.dll
 C:\_Projetos\Paulo\_GitHub\prmToolkit\prmToolkit.Validation\obj\Release\prmToolkit.Validation.pdb
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\bin\Release\prmToolkit.Validation.dll
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\bin\Release\prmToolkit.Validation.pdb
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\bin\Release\Newtonsoft.Json.dll
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\bin\Release\Newtonsoft.Json.xml
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\obj\Release\prmToolkit.Validation.csprojResolveAssemblyReference.cache
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\obj\Release\prmToolkit.Validation.dll
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\obj\Release\prmToolkit.Validation.pdb

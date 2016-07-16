@@ -44,8 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Validate.cs" />
-    <Compile Include="ValidateArgument.cs" />
+    <Compile Include="ArgumentsValidator.cs" />
+    <Compile Include="RaiseException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
