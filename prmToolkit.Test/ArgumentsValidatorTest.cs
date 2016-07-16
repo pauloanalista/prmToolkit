@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace prmToolkit.Test
 {
     [TestClass]
-    public class ValidateArgumentTest
+    public class ArgumentsValidatorTest
     {
         /// <summary>
         /// Este método captura as mensagens das exceções lançadas pelos argumentos 
