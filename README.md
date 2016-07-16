@@ -3,79 +3,103 @@
 prmToolkit É um projeto responsável por dar apoio a outros projetos.
 
 # Classes
-- ValidateArgument
+- ArgumentsValidator
 - Encryption
 
-# ValidateArgument
+# ArgumentsValidator
 Classe responsável por gerenciar validações de argumentos.
 
 Podemos realizar validações indivíduais ou em grupos.
 
 É possível levantar uma exceção ou captura-las.
 
-### Installation - ValidateArgument
+### Installation - ArgumentsValidator
 
 Para instalar, abra o prompt de comando Package Manager Console do seu Visual Studio e digite o comando abaixo:
 
 ```sh
-Install-Package prmToolkit.ValidateArgument
+Install-Package prmToolkit.ArgumentsValidator
 ```
 ### Exemplo de como usar
 
-Neste exemplo caso algum critério não seja atendido irá levantar uma única exceção com todas as mensagens
 ```sh
-public AdicionarFuncionarioResponse AdicionarFuncionario(AdicionarFuncionarioRequest request)
-        {
-            ValidateArgument.IsOkContinue(false,
-                                            Validate.IsNull(request, Mensagens.ARGUMENTO_REQUEST_OBRIGATORIO),
-                                            //Valida dados do funcionario
-                                            Validate.IsNull(request.Funcionario, Mensagens.ARGUMENTO_FUNCIONARIO_OBRIGATORIO),
-                                            Validate.IsNullOrEmpty(request.Funcionario.Nome, Mensagens.ARGUMENTO_FUNCIONARIO_NOME_OBRIGATORIO),
-                                            Validate.IsNullOrEmpty(request.Funcionario.Email, Mensagens.ARGUMENTO_FUNCIONARIO_EMAIL_OBRIGATORIO),
-                                            Validate.IsNullOrEmpty(request.Funcionario.Senha, Mensagens.ARGUMENTO_FUNCIONARIO_SENHA_OBRIGATORIO),
-                                            Validate.IsNullOrEmpty(request.Funcionario.Cpf, Mensagens.ARGUMENTO_FUNCIONARIO_CPF_OBRIGATORIO),
-                                            //Valida dados do perfil
-                                            Validate.IsNull(request.EnumPerfil, Mensagens.ARGUMENTO_PERFIL_OBRIGATORIO),
-                                            //Valida dados da loja
-                                            Validate.IsNotGuid(request.LojaId, Mensagens.ARGUMENTO_LOJA_ID_OBRIGATORIO)
-                                            );
-
-            //Criptografa a senha
-            request.Funcionario.Senha = MD5Crypt.EncryptMD5(request.Funcionario.Senha);
-
-            return _repositorioFuncionario.AdicionarFuncionario(request);
-        }
-
-```
-Neste exemplo caso algum critério não seja atendido irá levantar retornar uma lista de mensagens sem levantar a exceção
-```sh
-[TestMethod]
+namespace prmToolkit.Test
+{
+    [TestClass]
+    public class ArgumentsValidatorTest
+    {
+        /// <summary>
+        /// Este método captura as mensagens das exceções lançadas pelos argumentos 
+        /// mas não é lançada uma exceção para o usuário
+        /// </summary>
+        [TestMethod]
         public void ObterListaDeMensagensDasExcecoes()
         {
-            var result = ValidateArgument.GetMessagesFromExceptions(
-                                    Validate.IsNull(null, "object is required"),
-                                    Validate.IsNotEmail("email_invalid", "email invalid")
+            List<string> result = ArgumentsValidator.GetMessagesFromExceptions(
+                                    RaiseException.IfNull(null, "object is required"),
+                                    RaiseException.IfNotEmail("email_invalid", "email invalid")
                 );
 
             Assert.IsNotNull(result, "object required");
             Assert.IsTrue(result.Count == 2, "There should be two exceptions");
         }
-```
+        /// <summary>
+        /// Este método captura as exceções lançadas pelos os argumentos 
+        /// mas não é lançada uma exceção para o usuário
+        /// </summary>
+        [TestMethod]
+        public void ObterListaDeExecoesSemLancar()
+        {
+            List<Exception> result = ArgumentsValidator.GetExceptionList(
+                                    RaiseException.IfNull(null, "object is required"),
+                                    RaiseException.IfNotEmail("email_invalid", "email invalid")
+                );
 
-Podemos também trabalhar com exceções indivíduais
-```sh
- [TestMethod]
+            Assert.IsNotNull(result, "object required");
+            Assert.IsTrue(result.Count == 2, "There should be two exceptions");
+        }
+
+        /// <summary>
+        /// Este método lança uma única exceção, com as mensagens das exceções geradas pelos os argumentos 
+        /// </summary>
+        [TestMethod]
+        public void LancarUnicaExcecaoComMensagensDoGrupoDeExcecoes()
+        {
+            try
+            {
+                ArgumentsValidator.RaiseExceptionOfInvalidArguments(
+                                            RaiseException.IfNull(null, "object is required"),
+                                            RaiseException.IfNotEmail("email_invalid", "email invalid")
+                                            );
+            }
+            catch (Exception ex)
+            {
+                
+                Assert.IsTrue(ex.Message.Contains("object is required") && ex.Message.Contains("email invalid"), "There should be two exceptions");
+            }
+        }
+
+        /// <summary>
+        /// Este método lança uma exceção indivídual para o usuário
+        /// </summary>
+        [TestMethod]
         public void LancarExcecaoIndividual()
         {
             try
             {
-                Validate.IsNotNull(null, "object is required", true);
+                RaiseException.IfNotNull(null, "object is required", true);
             }
             catch (Exception ex)
             {
                 Assert.AreEqual(ex.Message, "object is required", "is expected value not null");
             }
+        }
+    }
+}
+
+
 ```
+
 # Encryption
 Classe responsável por criptografar e descriptografar dados ou mensagens
 
