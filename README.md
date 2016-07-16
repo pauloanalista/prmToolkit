@@ -17,8 +17,14 @@ Podemos realizar validações indivíduais ou em grupos.
 
 Para instalar, abra o prompt de comando Package Manager Console do seu Visual Studio e digite o comando abaixo:
 
+Para adicionar somente a referencia a dll
 ```sh
 Install-Package prmToolkit.ArgumentsValidator
+```
+
+Para adicionar somente as classes
+```sh
+Install-Package prmToolkit.ArgumentsValidator-Source
 ```
 ### Exemplo de como usar
 
