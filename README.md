@@ -107,7 +107,7 @@ namespace prmToolkit.Test
 ```
 
 # Notification
-Classe responsável por validar argumentos, sem levantar execeções, com ela é possível adicionar mensagens em várias camadas do projeto e obter essas notificações de forma centralizada. Também é possível saber se a requisição é valida.
+Classe responsável por validar argumentos, sem levantar exceções, com ela é possível adicionar mensagens em várias camadas do projeto e obter essas notificações de forma centralizada. Também é possível saber se a requisição é válida.
 
 ### Installation - Notification
 
