@@ -150,11 +150,9 @@ Install-Package prmToolkit.Notification-Source
             //Obtém a lista de mensagens para apresentar para o usuário
             var lista = NotificationManager.GetNotifications();
 
-            //Limpa lista de notificações
+            //Limpa lista de notificações, usado quando você finaliza seu request
             NotificationManager.End();
 
-
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(valid, "O argumento nao é verdadeiro");
        
 ```
 
