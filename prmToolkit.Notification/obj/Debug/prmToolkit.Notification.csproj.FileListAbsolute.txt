@@ -1,0 +1,5 @@
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Notification\obj\Debug\prmToolkit.Notification.csprojResolveAssemblyReference.cache
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Notification\bin\Debug\prmToolkit.ValidateCondition.dll
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Notification\bin\Debug\prmToolkit.ValidateCondition.pdb
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Notification\obj\Debug\prmToolkit.ValidateCondition.dll
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Notification\obj\Debug\prmToolkit.ValidateCondition.pdb

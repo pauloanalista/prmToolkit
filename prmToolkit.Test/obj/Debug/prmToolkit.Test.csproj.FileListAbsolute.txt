@@ -29,3 +29,16 @@ C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Test\bin\Debug\Ne
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Test\obj\Debug\prmToolkit.Test.csprojResolveAssemblyReference.cache
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Test\obj\Debug\prmToolkit.Test.dll
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Test\obj\Debug\prmToolkit.Test.pdb
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Test\obj\Debug\prmToolkit.Test.csprojResolveAssemblyReference.cache
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Test\obj\Debug\prmToolkit.Test.dll
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Test\obj\Debug\prmToolkit.Test.pdb
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Test\bin\Debug\prmToolkit.Test.dll
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Test\bin\Debug\prmToolkit.Test.pdb
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Test\bin\Debug\prmToolkit.Encryption.dll
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Test\bin\Debug\prmToolkit.ValidateCondition.dll
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Test\bin\Debug\prmToolkit.Validation.dll
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Test\bin\Debug\Newtonsoft.Json.dll
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Test\bin\Debug\prmToolkit.Encryption.pdb
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Test\bin\Debug\prmToolkit.ValidateCondition.pdb
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Test\bin\Debug\prmToolkit.Validation.pdb
+C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Test\bin\Debug\Newtonsoft.Json.xml
