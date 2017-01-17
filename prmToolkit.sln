@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.Encryption", "pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.Notification", "prmToolkit.Notification\prmToolkit.Notification.csproj", "{E93EEC02-5023-40F4-9516-7EBB630846AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.DateTimeExtension", "prmToolkit.DateTimeExtension\prmToolkit.DateTimeExtension.csproj", "{CEB305D6-67C8-4326-9AD2-8747EADBDBBE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{E93EEC02-5023-40F4-9516-7EBB630846AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E93EEC02-5023-40F4-9516-7EBB630846AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E93EEC02-5023-40F4-9516-7EBB630846AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB305D6-67C8-4326-9AD2-8747EADBDBBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB305D6-67C8-4326-9AD2-8747EADBDBBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB305D6-67C8-4326-9AD2-8747EADBDBBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB305D6-67C8-4326-9AD2-8747EADBDBBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
