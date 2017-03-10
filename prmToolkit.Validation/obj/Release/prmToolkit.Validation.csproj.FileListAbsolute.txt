@@ -9,3 +9,9 @@ C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\bin\Re
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\obj\Release\prmToolkit.Validation.csprojResolveAssemblyReference.cache
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\obj\Release\prmToolkit.Validation.dll
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Validation\obj\Release\prmToolkit.Validation.pdb
+C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Validation\bin\Release\prmToolkit.Validation.dll
+C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Validation\bin\Release\prmToolkit.Validation.pdb
+C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Validation\bin\Release\Newtonsoft.Json.dll
+C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Validation\bin\Release\Newtonsoft.Json.xml
+C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Validation\obj\Release\prmToolkit.Validation.dll
+C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Validation\obj\Release\prmToolkit.Validation.pdb

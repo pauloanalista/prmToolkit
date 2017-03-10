@@ -4,7 +4,7 @@ using prmToolkit.Notification;
 namespace prmToolkit.Test
 {
     [TestClass]
-    public class Notification
+    public class NotificationTest
     {
         [TestMethod]
         public void ValidateCondition_Valida_Argumento_Nome()

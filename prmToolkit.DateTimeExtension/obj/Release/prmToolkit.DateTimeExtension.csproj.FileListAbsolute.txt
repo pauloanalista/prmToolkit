@@ -2,3 +2,4 @@ C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.DateTimeExtension\bin\Rele
 C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.DateTimeExtension\bin\Release\prmToolkit.DateTimeExtension.pdb
 C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.DateTimeExtension\obj\Release\prmToolkit.DateTimeExtension.dll
 C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.DateTimeExtension\obj\Release\prmToolkit.DateTimeExtension.pdb
+C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.DateTimeExtension\obj\Release\prmToolkit.DateTimeExtension.csprojResolveAssemblyReference.cache

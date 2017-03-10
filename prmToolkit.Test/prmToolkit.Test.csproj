@@ -54,7 +54,8 @@
   <ItemGroup>
     <Compile Include="MD5CryptTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Notification.cs" />
+    <Compile Include="NotificationTest.cs" />
+    <Compile Include="ValidationTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\prmToolkit.Encryption\prmToolkit.Encryption.csproj">

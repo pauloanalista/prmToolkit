@@ -16,6 +16,32 @@ namespace prmToolkit.Validation
         /// <summary>
         /// Método responsável por levantar uma lista de exceções, caso todos os parametros estejam ok, ele deixa seguir para linha seguinte do código.
         /// </summary>
+        /// <param name="mensagem">Será levantada uma exceção com uma única mensagem, independente do número de validações realizadas</param>
+        /// <param name="validations">Lista de validações a serem realizadas</param>
+        /// <returns>Levanta uma exceção com mensagens agrupadas.</returns>
+        public static void RaiseExceptionOfInvalidArguments(string mensagem, params Exception[] validations)
+        {
+            var exceptionCollection = validations.ToList().Where(validation => validation != null).ToList();
+
+            if (exceptionCollection.Count == 0)
+            {
+                return;
+            }
+
+            //Subistitui todas exceções por uma única exceção
+            List<Exception> exList = new List<Exception>();
+            exList.Add(new Exception(mensagem));
+
+            string messageList = JsonConvert.SerializeObject(new { Mensagens = exList.Select(x => x.Message).ToList() });
+
+            throw new Exception(messageList);
+
+        }
+
+
+        /// <summary>
+        /// Método responsável por levantar uma lista de exceções, caso todos os parametros estejam ok, ele deixa seguir para linha seguinte do código.
+        /// </summary>
         /// <param name="validations">Lista de validações a serem realizadas</param>
         /// <returns>Levanta uma exceção com mensagens agrupadas.</returns>
         public static void RaiseExceptionOfInvalidArguments(params Exception[] validations)
