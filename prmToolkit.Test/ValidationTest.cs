@@ -62,7 +62,7 @@ namespace prmToolkit.Test
         }
 
         /// <summary>
-        /// Este método lança uma única exceção, com as mensagens das exceções geradas pelos os argumentos 
+        /// Este método lança uma única exceção, com uma única mensagem que represanta as exceções geradas pelos os argumentos 
         /// </summary>
         [TestMethod]
         public void LancarUnicaExcecaoComUnicaMensagemDoGrupoDeExcecoes()
