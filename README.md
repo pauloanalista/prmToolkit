@@ -32,7 +32,7 @@ Install-Package prmToolkit.ArgumentsValidator-Source
 namespace prmToolkit.Test
 {
     [TestClass]
-    public class ArgumentsValidatorTest
+    public class ValidationTest
     {
         /// <summary>
         /// Este método captura as mensagens das exceções lançadas pelos argumentos 
@@ -77,11 +77,36 @@ namespace prmToolkit.Test
                                             RaiseException.IfNull(null, "object is required"),
                                             RaiseException.IfNotEmail("email_invalid", "email invalid")
                                             );
+
+                
             }
             catch (Exception ex)
             {
-                
+
                 Assert.IsTrue(ex.Message.Contains("object is required") && ex.Message.Contains("email invalid"), "There should be two exceptions");
+            }
+        }
+
+        /// <summary>
+        /// Este método lança uma única exceção, com uma única mensagem que represanta as exceções geradas pelos os argumentos 
+        /// </summary>
+        [TestMethod]
+        public void LancarUnicaExcecaoComUnicaMensagemDoGrupoDeExcecoes()
+        {
+            try
+            {
+                bool existe = true;
+
+                ArgumentsValidator.RaiseExceptionOfInvalidArguments("Dados inválidos",
+                                            RaiseException.IfTrue(existe),
+                                            RaiseException.IfNotEmail("paulo.com.br")
+                                            );
+
+            }
+            catch (Exception ex)
+            {
+
+                Assert.IsTrue(ex.Message.Contains("Dados inválidos"), "There should be two exceptions");
             }
         }
 
@@ -102,7 +127,6 @@ namespace prmToolkit.Test
         }
     }
 }
-
 
 ```
 
