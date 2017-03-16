@@ -13,7 +13,7 @@ namespace prmToolkit.Test
         public void ObterDadosTest()
         {
             //Define a string de conexão
-            string  stringConexao = "Server=seu ip; Database=nome_do_banco; Port=3306; Uid=usuario; Pwd=senha;"
+            string stringConexao = "Server=seu ip; Database=nome_do_banco; Port=3306; Uid=usuario; Pwd=senha;";
             
             //Monta a query
             string query = @"select u.nome, u.login, u.senha from usuario u;";

@@ -684,6 +684,7 @@ namespace prmToolkit.Validation
         /// </summary>
         public static Exception IfNotCpf(string cpf, string message, bool generateIndividualException = false)
         {
+            IfNullOrEmpty(cpf, "Cpf não pode ser nulo.", generateIndividualException);
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             string tempCpf;
@@ -754,6 +755,7 @@ namespace prmToolkit.Validation
         /// </summary>
         public static Exception IfNotCnpj(string cnpj, string message, bool generateIndividualException = false)
         {
+            IfNullOrEmpty(cnpj, "Cnpj não pode ser nulo.", generateIndividualException);
             int[] multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
             int[] multiplicador2 = new int[13] { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
             int soma;
