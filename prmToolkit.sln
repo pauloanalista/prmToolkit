@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.Test", "prmToolkit.Test\prmToolkit.Test.csproj", "{7FDCC469-39AD-45C3-A6C1-F8630F11F95C}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.Notification", "prmToolkit.Notification\prmToolkit.Notification.csproj", "{E93EEC02-5023-40F4-9516-7EBB630846AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.DateTimeExtension", "prmToolkit.DateTimeExtension\prmToolkit.DateTimeExtension.csproj", "{CEB305D6-67C8-4326-9AD2-8747EADBDBBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.AccessMultipleDatabaseWithAdoNet", "prmToolkit.AccessMultipleDatabaseWithAdoNet\prmToolkit.AccessMultipleDatabaseWithAdoNet.csproj", "{D64FAE36-BBE2-45A6-9247-AF5FA878A5E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{CEB305D6-67C8-4326-9AD2-8747EADBDBBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEB305D6-67C8-4326-9AD2-8747EADBDBBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEB305D6-67C8-4326-9AD2-8747EADBDBBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D64FAE36-BBE2-45A6-9247-AF5FA878A5E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D64FAE36-BBE2-45A6-9247-AF5FA878A5E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D64FAE36-BBE2-45A6-9247-AF5FA878A5E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D64FAE36-BBE2-45A6-9247-AF5FA878A5E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

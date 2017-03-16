@@ -25,16 +25,3 @@ C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Test\bin\Release\
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.csprojResolveAssemblyReference.cache
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.dll
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.pdb
-C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Test.dll
-C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Test.pdb
-C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Encryption.dll
-C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.ValidateCondition.dll
-C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Validation.dll
-C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Test\bin\Release\Newtonsoft.Json.dll
-C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Encryption.pdb
-C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.ValidateCondition.pdb
-C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Validation.pdb
-C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Test\bin\Release\Newtonsoft.Json.xml
-C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.csprojResolveAssemblyReference.cache
-C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.dll
-C:\Users\paulo\Documents\GitHub\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.pdb

@@ -14,11 +14,11 @@ namespace prmToolkit.Validation
         #endregion
 
         /// <summary>
-        /// Método responsável por levantar uma lista de exceções, caso todos os parametros estejam ok, ele deixa seguir para linha seguinte do código.
+        /// Método responsável por levantar uma exceção que contém uma única mensagem que representa o conjunto de validações realizada.
         /// </summary>
-        /// <param name="mensagem">Será levantada uma exceção com uma única mensagem, independente do número de validações realizadas</param>
+        /// <param name="mensagem">Será levantada uma exceção com uma única mensagem, caso queira exibir todas as mensagens não utilize essa sobrecarga</param>
         /// <param name="validations">Lista de validações a serem realizadas</param>
-        /// <returns>Levanta uma exceção com mensagens agrupadas.</returns>
+        /// <returns>Levanta uma exceção com uma única mensagem.</returns>
         public static void RaiseExceptionOfInvalidArguments(string mensagem, params Exception[] validations)
         {
             var exceptionCollection = validations.ToList().Where(validation => validation != null).ToList();
@@ -40,7 +40,7 @@ namespace prmToolkit.Validation
 
 
         /// <summary>
-        /// Método responsável por levantar uma lista de exceções, caso todos os parametros estejam ok, ele deixa seguir para linha seguinte do código.
+        /// Método responsável por levantar uma exceção que contém uma lista de mensagens de acordo com o conjunto de validações realizada.
         /// </summary>
         /// <param name="validations">Lista de validações a serem realizadas</param>
         /// <returns>Levanta uma exceção com mensagens agrupadas.</returns>

@@ -52,7 +52,7 @@ namespace prmToolkit.Test
                                             RaiseException.IfNotEmail("email_invalid", "email invalid")
                                             );
 
-                
+
             }
             catch (Exception ex)
             {
@@ -98,6 +98,38 @@ namespace prmToolkit.Test
             {
                 Assert.AreEqual(ex.Message, "object is required", "is expected value not null");
             }
+        }
+
+
+        /// <summary>
+        /// Testando se uma coleção é vazia
+        /// </summary>
+        [TestMethod]
+        public void LancarExcecaoIndividualCasoAsColecoesNaoTenhamItemDentro()
+        {
+            string mensagem = "Não há itens na coleção";
+            List<string> lista = new List<string>();
+            int[] numeros = new int[] { };
+            string[] nomes = new string[] { };
+
+            try
+            {
+
+                List<string> mgs = ArgumentsValidator.GetMessagesFromExceptions(
+                RaiseException.IfCollectionEmpty(lista, mensagem),
+                RaiseException.IfCollectionEmpty(numeros, mensagem),
+                RaiseException.IfCollectionEmpty(nomes, mensagem));
+
+                Assert.IsTrue(mgs.Count == 3, "As coleções estao nulas.");
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            
+
         }
     }
 }

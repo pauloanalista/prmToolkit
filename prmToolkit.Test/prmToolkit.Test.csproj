@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>prmToolkit.Test</RootNamespace>
     <AssemblyName>prmToolkit.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -16,6 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -52,12 +54,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AccessMultipleDatabaseWithAdoNetTest.cs" />
     <Compile Include="MD5CryptTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NotificationTest.cs" />
     <Compile Include="ValidationTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\prmToolkit.AccessMultipleDatabaseWithAdoNet\prmToolkit.AccessMultipleDatabaseWithAdoNet.csproj">
+      <Project>{d64fae36-bbe2-45a6-9247-af5fa878a5e5}</Project>
+      <Name>prmToolkit.AccessMultipleDatabaseWithAdoNet</Name>
+    </ProjectReference>
     <ProjectReference Include="..\prmToolkit.Encryption\prmToolkit.Encryption.csproj">
       <Project>{a60ccff2-7b31-49dd-be2f-a4017f91c011}</Project>
       <Name>prmToolkit.Encryption</Name>
