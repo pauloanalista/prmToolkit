@@ -1,0 +1,13 @@
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\bin\Debug\prmToolkit.Log.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\bin\Debug\prmToolkit.Log.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\bin\Debug\Newtonsoft.Json.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\bin\Debug\prmToolkit.Validation.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\bin\Debug\Newtonsoft.Json.xml
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\obj\Debug\prmToolkit.Log.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\obj\Debug\prmToolkit.Log.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\obj\Debug\prmToolkit.Log.csprojResolveAssemblyReference.cache
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\bin\Debug\prmToolkit.Log.dll.config
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\bin\Debug\FirebirdSql.Data.FirebirdClient.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\bin\Debug\MySql.Data.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\bin\Debug\prmToolkit.AccessMultipleDatabaseWithAdoNet.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\bin\Debug\FirebirdSql.Data.FirebirdClient.pdb

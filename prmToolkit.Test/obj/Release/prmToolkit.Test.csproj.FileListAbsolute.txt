@@ -25,3 +25,24 @@ C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Test\bin\Release\
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.csprojResolveAssemblyReference.cache
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.dll
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.csprojResolveAssemblyReference.cache
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Test.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Test.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.AccessMultipleDatabaseWithAdoNet.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Encryption.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Log.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.ValidateCondition.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Validation.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\FirebirdSql.Data.FirebirdClient.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\MySql.Data.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\Newtonsoft.Json.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.AccessMultipleDatabaseWithAdoNet.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.AccessMultipleDatabaseWithAdoNet.dll.config
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Encryption.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Log.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.ValidateCondition.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\prmToolkit.Validation.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\FirebirdSql.Data.FirebirdClient.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\bin\Release\Newtonsoft.Json.xml
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Test\obj\Release\prmToolkit.Test.pdb

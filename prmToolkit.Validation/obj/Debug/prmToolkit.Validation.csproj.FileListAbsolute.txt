@@ -22,3 +22,9 @@ C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Validati
 C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Validation\obj\Debug\prmToolkit.Validation.csprojResolveAssemblyReference.cache
 C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Validation\obj\Debug\prmToolkit.Validation.dll
 C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Validation\obj\Debug\prmToolkit.Validation.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Validation\bin\Debug\prmToolkit.Validation.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Validation\bin\Debug\prmToolkit.Validation.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Validation\bin\Debug\Newtonsoft.Json.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Validation\bin\Debug\Newtonsoft.Json.xml
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Validation\obj\Debug\prmToolkit.Validation.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Validation\obj\Debug\prmToolkit.Validation.pdb

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.Test", "prmToolkit.Test\prmToolkit.Test.csproj", "{7FDCC469-39AD-45C3-A6C1-F8630F11F95C}"
 EndProject
@@ -14,6 +14,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.DateTimeExtension", "prmToolkit.DateTimeExtension\prmToolkit.DateTimeExtension.csproj", "{CEB305D6-67C8-4326-9AD2-8747EADBDBBE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.AccessMultipleDatabaseWithAdoNet", "prmToolkit.AccessMultipleDatabaseWithAdoNet\prmToolkit.AccessMultipleDatabaseWithAdoNet.csproj", "{D64FAE36-BBE2-45A6-9247-AF5FA878A5E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.Log", "prmToolkit.Log\prmToolkit.Log.csproj", "{F62AAA35-8513-43EF-9CE3-14E80509E8DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prmToolkit.Console", "prmToolkit.Console\prmToolkit.Console.csproj", "{4499EA29-B7DB-45AA-906C-7CE4F70EFE00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{D64FAE36-BBE2-45A6-9247-AF5FA878A5E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D64FAE36-BBE2-45A6-9247-AF5FA878A5E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D64FAE36-BBE2-45A6-9247-AF5FA878A5E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F62AAA35-8513-43EF-9CE3-14E80509E8DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F62AAA35-8513-43EF-9CE3-14E80509E8DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F62AAA35-8513-43EF-9CE3-14E80509E8DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F62AAA35-8513-43EF-9CE3-14E80509E8DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4499EA29-B7DB-45AA-906C-7CE4F70EFE00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4499EA29-B7DB-45AA-906C-7CE4F70EFE00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4499EA29-B7DB-45AA-906C-7CE4F70EFE00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4499EA29-B7DB-45AA-906C-7CE4F70EFE00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

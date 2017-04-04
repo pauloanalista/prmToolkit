@@ -1,0 +1,16 @@
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\bin\Debug\prmToolkit.Console.exe.config
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\bin\Debug\prmToolkit.Console.exe
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\bin\Debug\prmToolkit.Console.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\bin\Debug\prmToolkit.Log.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\bin\Debug\prmToolkit.Validation.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\bin\Debug\Newtonsoft.Json.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\bin\Debug\prmToolkit.Log.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\bin\Debug\Newtonsoft.Json.xml
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\obj\Debug\prmToolkit.Console.csprojResolveAssemblyReference.cache
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\obj\Debug\prmToolkit.Console.exe
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\obj\Debug\prmToolkit.Console.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\bin\Debug\prmToolkit.AccessMultipleDatabaseWithAdoNet.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\bin\Debug\FirebirdSql.Data.FirebirdClient.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\bin\Debug\MySql.Data.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\bin\Debug\prmToolkit.Log.dll.config
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\bin\Debug\FirebirdSql.Data.FirebirdClient.pdb

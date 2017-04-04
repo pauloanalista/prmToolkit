@@ -12,25 +12,25 @@ namespace prmToolkit.AccessMultipleDatabaseWithAdoNet
         /// Obtém uma lista de objetos ou entidade vinda do banco de dados.
         /// </summary>
         /// <typeparam name="TDto">Tipo de objeto que deseja retornar na lista</typeparam>
-        /// <param name="comandoSql">Parametros necessários para realizar a consulta no banco de dados</param>
+        /// <param name="commandSql">Parametros necessários para realizar a consulta no banco de dados</param>
         /// <returns>Retorna uma lista de objeto preenchido com as informações do banco de dados</returns>
-        protected IEnumerable<TDto> GetCollection<TDto>(CommandSql comandoSql) where TDto : class, new()
+        protected IEnumerable<TDto> GetCollection<TDto>(CommandSql commandSql) where TDto : class, new()
         {
-            AbstractDatabase database = DatabaseFactory.CreateDatabase(comandoSql.EnumDatabaseType, comandoSql.StringConnection);
+            AbstractDatabase database = DatabaseFactory.CreateDatabase(commandSql.EnumDatabaseType, commandSql.StringConnection);
             using (IDbConnection connection = database.CreateOpenConnection())
             {
-                using (IDbCommand command = database.CreateCommand(comandoSql.CommandText, connection))
+                using (IDbCommand command = database.CreateCommand(commandSql.CommandText, connection))
                 {
                     //Adiciona os parametros no command
-                    if (comandoSql.Parametros != null)
+                    if (commandSql.Parametros != null)
                     {
-                        comandoSql.Parametros.ForEach(x => command.Parameters.Add(x));
+                        commandSql.Parametros.ForEach(x => command.Parameters.Add(x));
                     }
 
                     //Define configurações do command
-                    command.CommandType = comandoSql.CommandType;
-                    command.CommandTimeout = comandoSql.CommandTimeout;
-                    command.CommandText = comandoSql.CommandText;
+                    command.CommandType = commandSql.CommandType;
+                    command.CommandTimeout = commandSql.CommandTimeout;
+                    command.CommandText = commandSql.CommandText;
 
                     //Converte o datareader em List
                     List<TDto> objectCollection = new List<TDto>();
@@ -38,6 +38,34 @@ namespace prmToolkit.AccessMultipleDatabaseWithAdoNet
 
                     return objectCollection;
 
+                }
+            }
+        }
+
+        /// <summary>
+        /// Insere, Atualiza e excluí operações do banco de dados
+        /// </summary>
+        /// <param name="commandSql"></param>
+        /// <returns></returns>
+        protected int ExecuteNonQuery(CommandSql commandSql)
+        {
+            AbstractDatabase database = DatabaseFactory.CreateDatabase(commandSql.EnumDatabaseType, commandSql.StringConnection);
+            using (IDbConnection connection = database.CreateOpenConnection())
+            {
+                using (IDbCommand command = database.CreateCommand(commandSql.CommandText, connection))
+                {
+                    //Adiciona os parametros no command
+                    if (commandSql.Parametros != null)
+                    {
+                        commandSql.Parametros.ForEach(x => command.Parameters.Add(x));
+                    }
+
+                    //Define consfigurações do command
+                    command.CommandType = commandSql.CommandType;
+                    command.CommandTimeout = commandSql.CommandTimeout;
+
+                    //Executa comando e exibe o número de linhas afetadas
+                    return command.ExecuteNonQuery();
                 }
             }
         }

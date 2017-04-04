@@ -1,0 +1,4 @@
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.DateTimeExtension\bin\Release\prmToolkit.DateTimeExtension.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.DateTimeExtension\bin\Release\prmToolkit.DateTimeExtension.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.DateTimeExtension\obj\Release\prmToolkit.DateTimeExtension.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.DateTimeExtension\obj\Release\prmToolkit.DateTimeExtension.pdb
