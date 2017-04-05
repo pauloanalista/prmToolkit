@@ -11,7 +11,9 @@ namespace prmToolkit.Sample
             while (true)
             {
                 LogManager.Save("Gravando log em " + DateTime.Now);
+
                 Console.Write("Gravando" + DateTime.Now);
+
                 Thread.Sleep(20000);
             }
         }
