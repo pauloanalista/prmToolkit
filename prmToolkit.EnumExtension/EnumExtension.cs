@@ -2,8 +2,14 @@
 using System.ComponentModel;
 namespace prmToolkit.EnumExtension
 {
-    public static class IEnumExtension
+    public static class EnumExtension
     {
+        /// <summary>
+        /// Obtém o Enum através do nome passado
+        /// </summary>
+        /// <typeparam name="T">Tipo genérico que representa o Enum</typeparam>
+        /// <param name="value">Nome do Enum</param>
+        /// <returns></returns>
         public static T ToEnum<T>(this string value)
         {
             return (T)Enum.Parse(typeof(T), value);

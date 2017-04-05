@@ -226,7 +226,7 @@ namespace prmToolkit.Test
 # DateTimeExtension
 Classe responsável por adicionar novos recursos no DateTime.
 
-### Installation - Notification
+### Installation - DateTimeExtension
 
 Para instalar, abra o prompt de comando Package Manager Console do seu Visual Studio e digite o comando abaixo:
 
@@ -249,11 +249,25 @@ Install-Package prmToolkit.DateTimeExtension-Source
 - EndOfLastDayOfMonth
 - IsInPeriod
 - IsOutOfPeriod
+ 
+# EnumExtension
+Classe responsável por adicionar novos recursos ao Enum.
+
+### Installation - EnumExtension
+
+Para instalar, abra o prompt de comando Package Manager Console do seu Visual Studio e digite o comando abaixo:
+
+Para adicionar somente a referencia da dll
+```sh
+Install-Package prmToolkit.EnumExtension
+```
+### Recursos disponíveis
+- GetDescription (obtém a descrição do enum)
+- ToEnum (Obtém o Enum através do nome passado)
+- GetAttribute (Obtém o atributo customizado do enum)
 
 # AccessMultipleDatabaseWithAdoNet
 Acesse mais de um tipo de banco de dados de forma fácil via ADO.NET.
-
-
 
 Atualmente dando suporte aos bancos.
 
@@ -292,7 +306,7 @@ namespace prmToolkit.Test
 {
 
     [TestClass]
-    public class AccessMultipleDatabaseWithAdoNetTest : AbstractRepository //herrda
+    public class AccessMultipleDatabaseWithAdoNetTest : AbstractRepository 
     {
         [TestMethod()]
         public void ObterDadosTest()
