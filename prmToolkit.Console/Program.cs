@@ -10,11 +10,13 @@ namespace prmToolkit.Sample
         {
             while (true)
             {
-                LogManager.Save("Gravando log em " + DateTime.Now);
 
-                Console.Write("Gravando" + DateTime.Now);
+                string mensagem = string.Concat(DateTime.Now, " - ", Faker.Name.FullName());
+                LogManager.Save(mensagem);
 
-                Thread.Sleep(20000);
+                Console.WriteLine(mensagem);
+
+                Thread.Sleep(10000);
             }
         }
     }

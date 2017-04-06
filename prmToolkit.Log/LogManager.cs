@@ -14,7 +14,7 @@ namespace prmToolkit.Log
         public static void Save(string message)
         {
             if (string.IsNullOrWhiteSpace(message)) return;
-            
+
 
             string enumModeToSave = GetKeyAppSettings("Log_ModeToSave");
 
@@ -51,12 +51,14 @@ namespace prmToolkit.Log
                         try
                         {
                             string filePath = GetKeyAppSettings("Log_FilePath");
+                            string applicationName = GetKeyAppSettings("Log_ApplicationName");
 
-                            log = new FileLog(filePath);
+                            log = new FileLog(filePath, applicationName);
                             log.Save(message);
 
                         }
-                        catch {
+                        catch
+                        {
                             contingencyNumberUsedWithError++;
                         }
                     }
@@ -70,7 +72,8 @@ namespace prmToolkit.Log
                             log = new DatabaseLog(applicationName, GetConnectionString(), AccessMultipleDatabaseWithAdoNet.Enumerators.EnumDatabaseType.MySql);
                             log.Save(message);
                         }
-                        catch {
+                        catch
+                        {
                             contingencyNumberUsedWithError++;
                         }
                     }
@@ -85,7 +88,8 @@ namespace prmToolkit.Log
                             log = new EventViewerLog(sourceEventViewer);
                             log.Save(message);
                         }
-                        catch {
+                        catch
+                        {
                             contingencyNumberUsedWithError++;
                         }
                     }
@@ -103,31 +107,31 @@ namespace prmToolkit.Log
         {
             string whereToSave = GetKeyAppSettings("Log_WhereToSave");
 
-            whereToSave.Split(',').ToList().ForEach(enumLogType =>
+            whereToSave.Trim().Split(',').ToList().ForEach(enumLogType =>
             {
-                Thread t = new Thread(() =>
+                //Thread t = new Thread(() =>
+                //{
+                ILog log = null;
+                if (int.Parse(enumLogType) == (int)EnumLogType.SaveToFile)
                 {
-                    ILog log = null;
-                    if (int.Parse(enumLogType) == (int)EnumLogType.SaveToFile)
-                    {
-                        string filePath = GetKeyAppSettings("Log_FilePath");
+                    string filePath = GetKeyAppSettings("Log_FolderPath");
+                    string applicationName = GetKeyAppSettings("Log_ApplicationName");
+                    log = new FileLog(filePath, applicationName);
+                }
+                else if (int.Parse(enumLogType) == (int)EnumLogType.SaveToDatabase)
+                {
+                    string applicationName = GetKeyAppSettings("Log_ApplicationName");
+                    log = new DatabaseLog(applicationName, GetConnectionString(), EnumDatabaseType.MySql);
+                }
+                else if (int.Parse(enumLogType) == (int)EnumLogType.SaveToEventViewer)
+                {
+                    string sourceEventViewer = GetKeyAppSettings("Log_SourceEventViewer");
 
-                        log = new FileLog(filePath);
-                    }
-                    else if (int.Parse(enumLogType) == (int)EnumLogType.SaveToDatabase)
-                    {
-                        string applicationName = GetKeyAppSettings("Log_ApplicationName");
-                        log = new DatabaseLog(applicationName, GetConnectionString(), EnumDatabaseType.MySql);
-                    }
-                    else if (int.Parse(enumLogType) == (int)EnumLogType.SaveToEventViewer)
-                    {
-                        string sourceEventViewer = GetKeyAppSettings("Log_SourceEventViewer");
+                    log = new EventViewerLog(sourceEventViewer);
+                }
 
-                        log = new EventViewerLog(sourceEventViewer);
-                    }
-
-                    log.Save(message);
-                });
+                log.Save(message);
+                //});
             });
         }
 
