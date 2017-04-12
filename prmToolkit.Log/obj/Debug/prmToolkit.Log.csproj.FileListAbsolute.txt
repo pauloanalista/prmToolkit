@@ -11,3 +11,4 @@ C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\bin\Debug\Newtonsoft.Json.xml
 C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\obj\Debug\prmToolkit.Log.dll
 C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\obj\Debug\prmToolkit.Log.pdb
 C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\obj\Debug\prmToolkit.Log.csprojResolveAssemblyReference.cache
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Log\bin\Debug\prmToolkit.EnumExtension.dll

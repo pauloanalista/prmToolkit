@@ -42,6 +42,9 @@
     <Reference Include="prmToolkit.AccessMultipleDatabaseWithAdoNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\prmToolkit.AccessMultipleDatabaseWithAdoNet.1.0.2\lib\prmToolkit.AccessMultipleDatabaseWithAdoNet.dll</HintPath>
     </Reference>
+    <Reference Include="prmToolkit.EnumExtension, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\prmToolkit.EnumExtension.1.0.1\lib\prmToolkit.EnumExtension.dll</HintPath>
+    </Reference>
     <Reference Include="prmToolkit.Validation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\prmToolkit.ArgumentsValidator.1.0.5\lib\prmToolkit.Validation.dll</HintPath>
     </Reference>
@@ -58,6 +61,8 @@
   <ItemGroup>
     <Compile Include="DatabaseLog.cs" />
     <Compile Include="Entities\Log.cs" />
+    <Compile Include="Enum\EnumExceptionDetail.cs" />
+    <Compile Include="Enum\EnumMessageType.cs" />
     <Compile Include="Enum\EnumModeToSave.cs" />
     <Compile Include="Enum\EnumLogType.cs" />
     <Compile Include="EventViewerLog.cs" />

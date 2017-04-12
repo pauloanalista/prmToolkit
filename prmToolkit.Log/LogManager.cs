@@ -12,40 +12,57 @@ namespace prmToolkit.Log
 {
     public static class LogManager
     {
-        private static string _dataArquivo = string.Empty;
-        static string filePath;
-        static string applicationName;
-        private static FileLog _fileLog;
-
         #region Métodos Públicos
-        public static void Save(string message)
+        public static void Save(string message, EnumMessageType enumMessageType = EnumMessageType.Information)
         {
             if (string.IsNullOrWhiteSpace(message)) return;
 
-
-            string enumModeToSave = ConfigHelper.GetKeyAppSettings("Log_ModeToSave");
-
-
-            if (int.Parse(enumModeToSave) == (int)EnumModeToSave.SaveToAll)
+            //Salva em todos os lugares configurados
+            try
             {
-                //Salva em todos os lugares configurados
-                SaveToAll(message);
+                SaveToAll(message, enumMessageType);
             }
-            else if (int.Parse(enumModeToSave) == (int)EnumModeToSave.SaveToContigency)
+            catch (Exception ex)
             {
                 //Salva no primeiro local configurado, caso de algum erro, salva no próximo lugar
-                SaveToContigency(message);
+                SaveToContigency("LOG_SAVEALL -> " + GetMessageOfException(ex), EnumMessageType.Error);
+                SaveToContigency("LOG_CONTIGENCY -> " + message);
             }
         }
-
-
+        public static void Save(Exception exception)
+        {
+            Save(GetMessageOfException(exception));
+        }
         #endregion
 
         #region Métodos Privados
 
-        private static void SaveToContigency(string message)
+        private static string GetMessageOfException(Exception exception)
         {
-            string whereToSave = ConfigHelper.GetKeyAppSettings("Log_WhereToSave");
+            string data = DateTime.Now.ToString("dd/mm/yyyy HH:mm:ss");
+            string mensagem = string.Empty;
+
+            EnumExceptionDetail enumExceptionDetail = (EnumExceptionDetail)int.Parse(ConfigHelper.GetKeyAppSettings("Log_Detail_Set_EnumExceptionDetail"));
+
+            if (enumExceptionDetail == EnumExceptionDetail.Simple)
+            {
+                mensagem = $"{ data} SIMPLE - > {exception.Message}";
+            }
+            else if (enumExceptionDetail == EnumExceptionDetail.Synthetic)
+            {
+                mensagem = $"{ data} SYNTHETIC - > {exception.Message} - {exception.StackTrace} > {exception.InnerException?.Message} - {exception.InnerException?.StackTrace}";
+            }
+            else if (enumExceptionDetail == EnumExceptionDetail.Analytical)
+            {
+                mensagem = $"{ data} ANALYTICAL - > {exception.ToString()}";
+            }
+
+            return mensagem;
+        }
+
+        private static void SaveToContigency(string message, EnumMessageType enumMessageType = EnumMessageType.Information)
+        {
+            string whereToSave = ConfigHelper.GetKeyAppSettings("Log_TrySave_Set_Sequence_EnumLogType_Contingency");
 
             string[] vetEnumLogType = whereToSave.Split(',');
 
@@ -60,34 +77,31 @@ namespace prmToolkit.Log
 
                 try
                 {
-
-                    log.Save(message);
+                    log.Save(message, enumMessageType);
 
                     break;
-
                 }
-                catch 
+                catch
                 {
-                    
                     contingencyNumberUsedWithError++;
                 }
             }
 
             if (contingencyNumberUsed == contingencyNumberUsedWithError)
             {
-                throw new Exception("Não foi possível salvar o log.");
+                throw new Exception("LOG_CONTIGENCY -> Não foi possível salvar o log.");
             }
         }
 
-        private static void SaveToAll(string message)
+        private static void SaveToAll(string message, EnumMessageType enumMessageType)
         {
-            string whereToSave = ConfigHelper.GetKeyAppSettings("Log_WhereToSave");
+            string whereToSave = ConfigHelper.GetKeyAppSettings("Log_SaveAll_Set_Sequence_EnumLogType");
 
             whereToSave.Trim().Split(',').ToList().ForEach(enumLogType =>
             {
                 ILog log = FactoryLog.GetLogType(enumLogType);
-                
-                _fileLog.Save(message);
+
+                log.Save(message, enumMessageType);
 
             });
         }

@@ -1,4 +1,5 @@
 ﻿using prmToolkit.Log;
+using prmToolkit.Log.Enum;
 using System;
 using System.Threading;
 
@@ -10,17 +11,13 @@ namespace prmToolkit.Sample
         {
             while (true)
             {
-                string mensagem = string.Concat(DateTime.Now, " - ", Faker.Name.FullName());
+                string mensagem = Faker.Name.FullName();
 
-                LogManager.Save(mensagem);
-
-                
+                LogManager.Save(mensagem, EnumMessageType.Error);
 
                 Console.WriteLine(mensagem);
 
-                
-
-                //Thread.Sleep(1000);
+                Thread.Sleep(100);
             }
         }
     }

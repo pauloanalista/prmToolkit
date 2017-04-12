@@ -16,3 +16,4 @@ C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\obj\Debug\prmToolkit.Console.exe
 C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\obj\Debug\prmToolkit.Console.pdb
 C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\bin\Debug\Faker.NET4.dll
 C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\bin\Debug\de-DE\Faker.NET4.resources.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.Console\bin\Debug\prmToolkit.EnumExtension.dll

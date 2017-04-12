@@ -1,0 +1,4 @@
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.EnumExtension\bin\Debug\prmToolkit.EnumExtension.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.EnumExtension\bin\Debug\prmToolkit.EnumExtension.pdb
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.EnumExtension\obj\Debug\prmToolkit.EnumExtension.dll
+C:\_Paulo\GitHub\prmToolkit\prmToolkit.EnumExtension\obj\Debug\prmToolkit.EnumExtension.pdb

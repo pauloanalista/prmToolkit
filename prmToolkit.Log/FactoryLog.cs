@@ -8,8 +8,6 @@ namespace prmToolkit.Log
     {
         static string filePath;
         static string applicationName;
-        private static FileLog _fileLog;
-
 
         public static ILog GetLogType(string enumLogType)
         {
@@ -20,7 +18,11 @@ namespace prmToolkit.Log
                     {
 
                         string applicationName = ConfigHelper.GetKeyAppSettings("Log_ApplicationName");
-                        log = new DatabaseLog(applicationName, ConfigHelper.GetConnectionString(), AccessMultipleDatabaseWithAdoNet.Enumerators.EnumDatabaseType.MySql);
+                        int enumDatabaseTypeAppSettings = int.Parse(ConfigHelper.GetKeyAppSettings("Log_Database_Set_EnumDatabaseType"));
+
+                        AccessMultipleDatabaseWithAdoNet.Enumerators.EnumDatabaseType enumDatabaseType = (AccessMultipleDatabaseWithAdoNet.Enumerators.EnumDatabaseType)enumDatabaseTypeAppSettings;
+
+                        log = new DatabaseLog(applicationName, ConfigHelper.GetConnectionString(), enumDatabaseType);
                     }
                     break;
 
@@ -38,7 +40,7 @@ namespace prmToolkit.Log
 
                 case (int)EnumLogType.SaveToEventViewer:
                     {
-                        string sourceEventViewer = ConfigHelper.GetKeyAppSettings("Log_SourceEventViewer");
+                        string sourceEventViewer = ConfigHelper.GetKeyAppSettings("Log_ApplicationName");
 
                         log = new EventViewerLog(sourceEventViewer);
 

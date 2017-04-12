@@ -1,4 +1,6 @@
-﻿using prmToolkit.Log.Interfaces;
+﻿using prmToolkit.EnumExtension;
+using prmToolkit.Log.Enum;
+using prmToolkit.Log.Interfaces;
 using System;
 using System.IO;
 using System.Threading;
@@ -23,7 +25,7 @@ namespace prmToolkit.Log
         }
 
         
-        public void Save(string message)
+        public void Save(string message, EnumMessageType enumMessageType = EnumMessageType.Information)
         {
             // Set Locked
             _readWriteLock.EnterWriteLock();
@@ -45,6 +47,8 @@ namespace prmToolkit.Log
                 // Grava o arquivo
                 using (StreamWriter sw = File.AppendText(GetFilePath()))
                 {
+                    message = $"{DateTime.Now} - {enumMessageType.GetDescription()} -> {message}";
+                    
                     sw.WriteLine(message);
                     sw.Close();
                 }
@@ -56,9 +60,9 @@ namespace prmToolkit.Log
             }
         }
 
-        public async Task SaveAsync(string message)
+        public async Task SaveAsync(string message, EnumMessageType enumMessageType = EnumMessageType.Information)
         {
-            await Task.Run(() => Save(message));
+            await Task.Run(() => Save(message, enumMessageType));
         }
 
         
