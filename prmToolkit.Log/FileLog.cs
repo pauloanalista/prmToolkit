@@ -12,8 +12,9 @@ namespace prmToolkit.Log
         private readonly string _folderPath;
         private readonly string _applicationName;
         private readonly string _fileName;
-        private string _caminhoArquivo;
         private static string _dataArquivo = string.Empty;
+        private static DateTime? _dataUltimaCriacao;
+        
         public FileLog(string folderPath, string applicationName)
         {
             _folderPath = folderPath;
@@ -21,18 +22,25 @@ namespace prmToolkit.Log
             _fileName = applicationName + ".log";
         }
 
+        
         public void Save(string message)
         {
             // Set Locked
             _readWriteLock.EnterWriteLock();
             try
             {
-                //Verifica se o arquivo existe
-                if (File.Exists(GetFilePath()))
+                if (!_dataUltimaCriacao.HasValue || DateTime.Now.Day != _dataUltimaCriacao.Value.Day)
                 {
-                    //Renomeia o arquivo antigo
-                    RenameOldFile();
+                    //Verifica se o arquivo existe
+                    if (File.Exists(GetFilePath()))
+                    {
+                        //Renomeia o arquivo antigo
+                        RenameOldFile();
+                    }
+
+                    _dataUltimaCriacao = DateTime.Now;
                 }
+                
 
                 // Grava o arquivo
                 using (StreamWriter sw = File.AppendText(GetFilePath()))
@@ -57,7 +65,7 @@ namespace prmToolkit.Log
 
         private string GetFilePath()
         {
-            return Path.Combine(_folderPath, _applicationName) + ".txt";
+            return Path.Combine(_folderPath, _fileName);
         }
 
         private void RenameOldFile()

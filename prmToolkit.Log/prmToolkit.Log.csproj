@@ -61,7 +61,9 @@
     <Compile Include="Enum\EnumModeToSave.cs" />
     <Compile Include="Enum\EnumLogType.cs" />
     <Compile Include="EventViewerLog.cs" />
+    <Compile Include="FactoryLog.cs" />
     <Compile Include="FileLog.cs" />
+    <Compile Include="Helpers\ConfigHelper.cs" />
     <Compile Include="Interfaces\ILog.cs" />
     <Compile Include="LogManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

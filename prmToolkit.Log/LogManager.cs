@@ -1,5 +1,6 @@
 ﻿using prmToolkit.AccessMultipleDatabaseWithAdoNet.Enumerators;
 using prmToolkit.Log.Enum;
+using prmToolkit.Log.Helpers;
 using prmToolkit.Log.Interfaces;
 using prmToolkit.Validation;
 using System;
@@ -11,12 +12,18 @@ namespace prmToolkit.Log
 {
     public static class LogManager
     {
+        private static string _dataArquivo = string.Empty;
+        static string filePath;
+        static string applicationName;
+        private static FileLog _fileLog;
+
+        #region Métodos Públicos
         public static void Save(string message)
         {
             if (string.IsNullOrWhiteSpace(message)) return;
 
 
-            string enumModeToSave = GetKeyAppSettings("Log_ModeToSave");
+            string enumModeToSave = ConfigHelper.GetKeyAppSettings("Log_ModeToSave");
 
 
             if (int.Parse(enumModeToSave) == (int)EnumModeToSave.SaveToAll)
@@ -31,130 +38,61 @@ namespace prmToolkit.Log
             }
         }
 
+
+        #endregion
+
+        #region Métodos Privados
+
         private static void SaveToContigency(string message)
         {
-            string whereToSave = GetKeyAppSettings("Log_WhereToSave");
+            string whereToSave = ConfigHelper.GetKeyAppSettings("Log_WhereToSave");
 
             string[] vetEnumLogType = whereToSave.Split(',');
 
             int contingencyNumberUsed = 0;
             int contingencyNumberUsedWithError = 0;
 
-            vetEnumLogType.ToList().ForEach(enumLogType =>
+            foreach (var enumLogType in vetEnumLogType)
+            {
+                ILog log = FactoryLog.GetLogType(enumLogType);
+
+                contingencyNumberUsed++;
+
+                try
                 {
-                    ILog log = null;
 
-                    if (int.Parse(enumLogType) == (int)EnumLogType.SaveToFile)
-                    {
-                        contingencyNumberUsed++;
+                    log.Save(message);
 
-                        try
-                        {
-                            string filePath = GetKeyAppSettings("Log_FilePath");
-                            string applicationName = GetKeyAppSettings("Log_ApplicationName");
+                    break;
 
-                            log = new FileLog(filePath, applicationName);
-                            log.Save(message);
-
-                        }
-                        catch
-                        {
-                            contingencyNumberUsedWithError++;
-                        }
-                    }
-                    else if (int.Parse(enumLogType) == (int)EnumLogType.SaveToDatabase)
-                    {
-                        contingencyNumberUsed++;
-
-                        try
-                        {
-                            string applicationName = GetKeyAppSettings("Log_ApplicationName");
-                            log = new DatabaseLog(applicationName, GetConnectionString(), AccessMultipleDatabaseWithAdoNet.Enumerators.EnumDatabaseType.MySql);
-                            log.Save(message);
-                        }
-                        catch
-                        {
-                            contingencyNumberUsedWithError++;
-                        }
-                    }
-                    else if (int.Parse(enumLogType) == (int)EnumLogType.SaveToEventViewer)
-                    {
-                        contingencyNumberUsed++;
-
-                        try
-                        {
-                            string sourceEventViewer = GetKeyAppSettings("Log_SourceEventViewer");
-
-                            log = new EventViewerLog(sourceEventViewer);
-                            log.Save(message);
-                        }
-                        catch
-                        {
-                            contingencyNumberUsedWithError++;
-                        }
-                    }
-                });
+                }
+                catch 
+                {
+                    
+                    contingencyNumberUsedWithError++;
+                }
+            }
 
             if (contingencyNumberUsed == contingencyNumberUsedWithError)
             {
                 throw new Exception("Não foi possível salvar o log.");
             }
-
-
         }
 
         private static void SaveToAll(string message)
         {
-            string whereToSave = GetKeyAppSettings("Log_WhereToSave");
+            string whereToSave = ConfigHelper.GetKeyAppSettings("Log_WhereToSave");
 
             whereToSave.Trim().Split(',').ToList().ForEach(enumLogType =>
             {
-                //Thread t = new Thread(() =>
-                //{
-                ILog log = null;
-                if (int.Parse(enumLogType) == (int)EnumLogType.SaveToFile)
-                {
-                    string filePath = GetKeyAppSettings("Log_FolderPath");
-                    string applicationName = GetKeyAppSettings("Log_ApplicationName");
-                    log = new FileLog(filePath, applicationName);
-                }
-                else if (int.Parse(enumLogType) == (int)EnumLogType.SaveToDatabase)
-                {
-                    string applicationName = GetKeyAppSettings("Log_ApplicationName");
-                    log = new DatabaseLog(applicationName, GetConnectionString(), EnumDatabaseType.MySql);
-                }
-                else if (int.Parse(enumLogType) == (int)EnumLogType.SaveToEventViewer)
-                {
-                    string sourceEventViewer = GetKeyAppSettings("Log_SourceEventViewer");
+                ILog log = FactoryLog.GetLogType(enumLogType);
+                
+                _fileLog.Save(message);
 
-                    log = new EventViewerLog(sourceEventViewer);
-                }
-
-                log.Save(message);
-                //});
             });
         }
 
+        #endregion
 
-
-        private static string GetConnectionString()
-        {
-            var connectionString = ConfigurationManager.ConnectionStrings["Log_ConnectionString"]?.ConnectionString;
-
-            RaiseException.IfNullOrEmpty(connectionString, "Chave 'Log_ConnectionString' não definida no CONNECTIONSTRINGS. Verifique seu WebConfig ou AppConfig.", true);
-
-            return connectionString;
-        }
-
-
-
-        public static string GetKeyAppSettings(string key)
-        {
-            var value = ConfigurationManager.AppSettings[key];
-
-            RaiseException.IfNullOrEmpty(value, $"Chave '{key}' não definida no APPSETTINGS. Verifique seu WebConfig ou AppConfig.", true);
-
-            return value;
-        }
     }
 }
