@@ -354,14 +354,15 @@ Todo o comportamento do log deve ser informado diretamente no arquivo de configu
 
 Para instalar, abra o prompt de comando Package Manager Console do seu Visual Studio e digite o comando abaixo:
 
-Para adicionar somente a referencia a dll
+Para adicionar a referencia a dll
 ```sh
 Install-Package prmToolkit.Log
 ```
 
-### Exemplo de como usar
+### Exemplo de como configurar o log
 
-Após adicionar o pacote prmToolkit.Log em seu projeto, configure seu (webConfig ou appConfig) conforme abaixo:
+Após adicionar o pacote prmToolkit.Log em seu projeto, configure seu (WebConfig ou AppConfig) conforme abaixo:
+
 
 ```sh
 <?xml version="1.0" encoding="utf-8" ?>
@@ -408,4 +409,12 @@ Após adicionar o pacote prmToolkit.Log em seu projeto, configure seu (webConfig
   </startup>
 </configuration>
 
+```
+
+### Exemplo de como usar
+
+```sh
+ 
+ LogManager.Save("Minha mensagem", EnumMessageType.Information)
+ 
 ```
