@@ -315,7 +315,38 @@ namespace prmToolkit.Validation
         /// </summary>
         public static Exception IfNullOrEmpty(string stringValue, string message, bool generateIndividualException = false)
         {
-            if (stringValue == null || stringValue.Trim().Length == 0)
+            if (string.IsNullOrEmpty(stringValue))
+            {
+                if (generateIndividualException == true)
+                {
+                    throw new InvalidOperationException(message);
+                }
+
+                return new InvalidOperationException(message);
+            }
+
+            return null;
+        }
+        #endregion
+
+
+        #region IfNullOrEmptyOrWhiteSpace
+        /// <summary>
+        /// Se for nulo ou vazio ou tem espaço vazio, levanta exceção
+        /// Há mensagem deverá ser definida no método ArgumentsValidator.RaiseExceptionOfInvalidArguments
+        /// </summary>
+        public static Exception IfNullOrEmptyOrWhiteSpace(string stringValue, bool generateIndividualException = false)
+        {
+            
+            return IfNullOrEmptyOrWhiteSpace(stringValue, string.Empty, generateIndividualException);
+        }
+
+        /// <summary>
+        /// Se for nulo ou vazio, levanta exceção
+        /// </summary>
+        public static Exception IfNullOrEmptyOrWhiteSpace(string stringValue, string message, bool generateIndividualException = false)
+        {
+            if (string.IsNullOrEmpty(stringValue) || string.IsNullOrWhiteSpace(stringValue))
             {
                 if (generateIndividualException == true)
                 {
