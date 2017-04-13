@@ -15,7 +15,8 @@ namespace prmToolkit.Sample
             List<string> mensagens = new List<string>();
             for (int i = 0; i < 1000000; i++)
             {
-                string mensagem = $" {i.ToString()} --> {Faker.Name.FullName()}";
+                
+                string mensagem = $" {i.ToString()} --> {Faker.Name.GetFullName()}";
                 mensagens.Add(mensagem);
 
                 Console.WriteLine(mensagem);
