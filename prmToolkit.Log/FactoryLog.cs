@@ -30,7 +30,7 @@ namespace prmToolkit.Log
                     {
                         if (string.IsNullOrEmpty(filePath))
                         {
-                            filePath = ConfigHelper.GetKeyAppSettings("Log_FolderPath");
+                            filePath = ConfigHelper.GetKeyAppSettings("Log_File_Set_FolderPath");
                             applicationName = ConfigHelper.GetKeyAppSettings("Log_ApplicationName");
                         }
 

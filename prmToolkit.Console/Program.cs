@@ -1,6 +1,8 @@
 ﻿using prmToolkit.Log;
 using prmToolkit.Log.Enum;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 
 namespace prmToolkit.Sample
@@ -9,16 +11,26 @@ namespace prmToolkit.Sample
     {
         static void Main(string[] args)
         {
-            while (true)
+            Console.WriteLine("Jogando 3000000 itens no array....");
+            List<string> mensagens = new List<string>();
+            for (int i = 0; i < 1000000; i++)
             {
-                string mensagem = Faker.Name.FullName();
-
-                LogManager.Save(mensagem, EnumMessageType.Error);
+                string mensagem = $" {i.ToString()} --> {Faker.Name.FullName()}";
+                mensagens.Add(mensagem);
 
                 Console.WriteLine(mensagem);
-
-                Thread.Sleep(100);
             }
+
+            Console.WriteLine("Gravando log....");
+
+            mensagens.AsParallel().ForAll(x =>
+            {
+                LogManager.Save(x, EnumMessageType.Error);
+                Console.WriteLine(x);
+            });
+
+            Console.WriteLine("..........FIM..........");
+            Console.ReadKey();
         }
     }
 }

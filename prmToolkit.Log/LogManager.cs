@@ -16,19 +16,27 @@ namespace prmToolkit.Log
         public static void Save(string message, EnumMessageType enumMessageType = EnumMessageType.Information)
         {
             if (string.IsNullOrWhiteSpace(message)) return;
+            
+            //Verifica se tem permissão para gravar o tipo de mensagem
+            if (HasPermissionSaveMessageType(enumMessageType) == false) return;
 
-            //Salva em todos os lugares configurados
             try
             {
+                //Salva em todos os lugares configurados
                 SaveToAll(message, enumMessageType);
             }
             catch (Exception ex)
             {
+                //Verifica se tem permissão para gravar o tipo de mensagem
+                if (HasPermissionSaveMessageType(enumMessageType) == false) return;
+
                 //Salva no primeiro local configurado, caso de algum erro, salva no próximo lugar
                 SaveToContigency("LOG_SAVEALL -> " + GetMessageOfException(ex), EnumMessageType.Error);
                 SaveToContigency("LOG_CONTIGENCY -> " + message);
             }
         }
+
+      
         public static void Save(Exception exception)
         {
             Save(GetMessageOfException(exception));
@@ -36,6 +44,25 @@ namespace prmToolkit.Log
         #endregion
 
         #region Métodos Privados
+
+        private static bool HasPermissionSaveMessageType(EnumMessageType enumMessageType)
+        {
+            
+            string enumsMessageType = ConfigHelper.GetKeyAppSettings("Log_MessageType_View");
+            string[] vetEnumsMessageType = enumsMessageType.Trim().Split(',');
+
+            //Verifica se o tipo de messagem tem permissao para gravar
+            bool permissao = false;
+            vetEnumsMessageType.ToList().ForEach(x => {
+                if (int.Parse(x) == (int)enumMessageType)
+                {
+                    permissao = true;
+                }
+            });
+
+            return permissao;
+        }
+
 
         private static string GetMessageOfException(Exception exception)
         {

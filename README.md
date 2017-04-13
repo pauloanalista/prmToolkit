@@ -337,3 +337,79 @@ namespace prmToolkit.Test
 }
 
 ```
+
+# Log
+Pacote responsável por gerenciar os logs da aplicação.
+
+Suporte a gravação de log:
+- File
+- EventViewer
+- Database (MySql, SqlServer e Firebird)
+
+Recursos
+Todo o comportamento do log deve ser informado diretamente no arquivo de configuração de seu projeto, com isso caso seja necessário mudar a estratégia de gravação de log, você não precisa recompilar sua aplicação.
+
+
+### Installation - Log
+
+Para instalar, abra o prompt de comando Package Manager Console do seu Visual Studio e digite o comando abaixo:
+
+Para adicionar somente a referencia a dll
+```sh
+Install-Package prmToolkit.Log
+```
+
+### Exemplo de como usar
+
+Após adicionar o pacote prmToolkit.Log em seu projeto, configure seu (webConfig ou appConfig) conforme abaixo:
+
+```sh
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <appSettings>
+    <!--EnumDatabaseType = SqlServer = 0, MySql = 1, Firebird = 2-->
+    <!--EnumExceptionDetail = Simple = 0, Synthetic = 1, Analytical = 2-->
+    <!--EnumLogType = SaveToFile = 0, SaveToDatabase = 1, SaveToEventViewer = 2-->
+    <!--EnumMessageType = Information = 0, Warning = 1, Error = 2 -->
+
+    <!--Irá salvar o log em todos lugares definidos aqui-->
+    <add key="Log_SaveAll_Set_Sequence_EnumLogType" value="0"/>
+
+    <!--
+    Irá salvar o log no modo de contigência, caso o log principal de algum erro o contigência é acionado. 
+    Ele irá gravar para o primeiro tipo de log informado, caso não consiga ele tenta o segundo tipo de log informado e assim sucessivamente
+    -->
+    <add key="Log_TrySave_Set_Sequence_EnumLogType_Contingency" value="1, 2"/>
+
+    <!--Define que tipo de banco de dados você quer armazenar o log MySql, SqlServer ou Firebird-->
+    <add key="Log_Database_Set_EnumDatabaseType" value="1"/>
+
+    <!--Define o nível de detalhamento do log, podendo ser log simples, sintético ou analitico-->
+    <add key="Log_Detail_Set_EnumExceptionDetail" value="0"/>
+
+    <!--Aqui definimos que tipo de mensagem tem permissão de ser armazenado, podendo ser Information, Warning e Error-->
+    <add key="Log_MessageType_View" value="0, 1, 2"/>
+
+    <!--Define o nome da aplicação que está sendo logado-->
+    <add key="Log_ApplicationName" value="prmToolkit"/>
+
+    <!--Define onde será gravado o log em arquivo-->
+    <add key="Log_File_Set_FolderPath" value="C:\_Paulo_\Logs"/>
+  </appSettings>
+
+  <connectionStrings>
+    <clear />
+    <!--Local-->
+    <add name="Log_ConnectionString" providerName="SQLOLEDB" connectionString="Server=localhost; Database=samich_log; Port=3306; Uid=root; Pwd=MySQL@dmin;" />
+  </connectionStrings>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2" />
+    </startup>
+<system.data>
+		<DbProviderFactories>
+			<remove invariant="FirebirdSql.Data.FirebirdClient" />
+			<add name="FirebirdClient Data Provider" invariant="FirebirdSql.Data.FirebirdClient" description=".NET Framework Data Provider for Firebird" type="FirebirdSql.Data.FirebirdClient.FirebirdClientFactory, FirebirdSql.Data.FirebirdClient" />
+		<remove invariant="MySql.Data.MySqlClient" /><add name="MySQL Data Provider" invariant="MySql.Data.MySqlClient" description=".Net Framework Data Provider for MySQL" type="MySql.Data.MySqlClient.MySqlClientFactory, MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" /></DbProviderFactories>
+	</system.data></configuration>
+
+```

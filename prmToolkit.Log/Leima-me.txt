@@ -1,4 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿Para usar este Log é necessário setar algumas informações no AppConfig ou WebConfig, são elas!
+
+<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <appSettings>
     <!--EnumDatabaseType = SqlServer = 0, MySql = 1, Firebird = 2-->
