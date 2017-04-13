@@ -448,8 +448,8 @@ Install-Package prmToolkit.Faker
 
 ```sh
  
-	Faker.Name.GetFirstName();
-	Faker.Company.GetName();
-	Faker.CreditCard.CreditCardNumber();
+ Faker.Name.GetFirstName();
+ Faker.Company.GetName();
+ Faker.CreditCard.CreditCardNumber();
  
 ```
