@@ -19,6 +19,9 @@ namespace prmToolkit.Log.Api
             //Classe responsavel por configuar a webapi
             HttpConfiguration config = new HttpConfiguration();
 
+            //Configura a documentação automatica atraves do Swagger
+            SwaggerConfig.Register(config);
+
             //Container de inversao de controle
             var container = new Container();
 
