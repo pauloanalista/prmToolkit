@@ -4,9 +4,13 @@ prmToolkit É um projeto responsável por dar apoio a outros projetos.
 
 # Classes
 - ArgumentsValidator
+- Notification
 - Encryption
+- DateTimeExtension
+- EnumExtension
 - AccessMultipleDatabaseWithAdoNet
-
+- Log
+- Faker
 # ArgumentsValidator
 Classe responsável por gerenciar validações de argumentos.
 
