@@ -3,8 +3,3 @@ C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Notifica
 C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Notification\bin\Debug\prmToolkit.ValidateCondition.pdb
 C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Notification\obj\Debug\prmToolkit.ValidateCondition.dll
 C:\Users\paulo\Downloads\prmToolkit-master\prmToolkit-master\prmToolkit.Notification\obj\Debug\prmToolkit.ValidateCondition.pdb
-C:\_Paulo\GitHub\prmToolkit\prmToolkit.Notification\bin\Debug\prmToolkit.ValidateCondition.dll
-C:\_Paulo\GitHub\prmToolkit\prmToolkit.Notification\bin\Debug\prmToolkit.ValidateCondition.pdb
-C:\_Paulo\GitHub\prmToolkit\prmToolkit.Notification\obj\Debug\prmToolkit.Notification.csprojResolveAssemblyReference.cache
-C:\_Paulo\GitHub\prmToolkit\prmToolkit.Notification\obj\Debug\prmToolkit.ValidateCondition.dll
-C:\_Paulo\GitHub\prmToolkit\prmToolkit.Notification\obj\Debug\prmToolkit.ValidateCondition.pdb

@@ -64,6 +64,34 @@ namespace prmToolkit.Validation
         }
         #endregion
 
+        #region IfEqualsZero
+        /// <summary>
+        /// Se o valor for igual a zero levanta exceção, a mensagem deverá ser definida no método ArgumentsValidator.RaiseExceptionOfInvalidArguments
+        /// </summary>
+        public static Exception IfEqualsZero(int object1, bool generateIndividualException = false)
+        {
+            return IfEquals(object1, string.Empty, generateIndividualException);
+        }
+
+        /// <summary>
+        /// Se for igual a zero levanta exceção
+        /// </summary>
+        public static Exception IfEqualsZero(int object1,  string message, bool generateIndividualException = false)
+        {
+            if (object1.Equals(0))
+            {
+                if (generateIndividualException == true)
+                {
+                    throw new InvalidOperationException(message);
+                }
+
+                return new InvalidOperationException(message);
+            }
+
+            return null;
+        }
+        #endregion
+
         #region IfTrue
         /// <summary>
         /// Se o valor passado for verdadeiro, levanta exceção.
@@ -328,7 +356,6 @@ namespace prmToolkit.Validation
             return null;
         }
         #endregion
-
 
         #region IfNullOrEmptyOrWhiteSpace
         /// <summary>
