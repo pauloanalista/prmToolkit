@@ -65,6 +65,7 @@ namespace prmToolkit.Validation
         #endregion
 
         #region IfEqualsZero
+
         /// <summary>
         /// Se o valor for igual a zero levanta exceção, a mensagem deverá ser definida no método ArgumentsValidator.RaiseExceptionOfInvalidArguments
         /// </summary>
@@ -90,6 +91,7 @@ namespace prmToolkit.Validation
 
             return null;
         }
+
         #endregion
 
         #region IfTrue
