@@ -61,28 +61,6 @@
     <Compile Include="LogManagerTest.cs" />
     <Compile Include="ValidationTest.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\prmToolkit.AccessMultipleDatabaseWithAdoNet\prmToolkit.AccessMultipleDatabaseWithAdoNet.csproj">
-      <Project>{d64fae36-bbe2-45a6-9247-af5fa878a5e5}</Project>
-      <Name>prmToolkit.AccessMultipleDatabaseWithAdoNet</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\prmToolkit.Encryption\prmToolkit.Encryption.csproj">
-      <Project>{a60ccff2-7b31-49dd-be2f-a4017f91c011}</Project>
-      <Name>prmToolkit.Encryption</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\prmToolkit.Log\prmToolkit.Log.csproj">
-      <Project>{f62aaa35-8513-43ef-9ce3-14e80509e8db}</Project>
-      <Name>prmToolkit.Log</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\prmToolkit.Notification\prmToolkit.Notification.csproj">
-      <Project>{e93eec02-5023-40f4-9516-7ebb630846ab}</Project>
-      <Name>prmToolkit.Notification</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\prmToolkit.Validation\prmToolkit.Validation.csproj">
-      <Project>{9fd0bbe8-d644-4d55-9f02-5533bded461d}</Project>
-      <Name>prmToolkit.Validation</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
