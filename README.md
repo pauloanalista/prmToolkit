@@ -4,7 +4,6 @@ OBS: Devido a solução conter vários projetos, resolvi separa-los em outros re
 
 ### Projetos responsáveis por meus pacotes Nugets disponibilizados
 - [prmToolkit.NotificationPattern](https://github.com/pauloanalista/prmToolkit.NotificationPattern)
-- [prmToolkit.NotificationPattern.Core](https://github.com/pauloanalista/prmToolkit.NotificationPattern.Core)
 - [ArgumentsValidator](https://github.com/pauloanalista/prmToolkit.ArgumentsValidator)
 - [Notification](https://github.com/pauloanalista/prmToolkit.Notification)
 - [Encryption](https://github.com/pauloanalista/prmToolkit.Encryption)
