@@ -14,6 +14,8 @@ OBS: Devido a solução conter vários projetos, resolvi separa-los em outros re
 - [AccessMultipleDatabaseWithAdoNet](https://github.com/pauloanalista/prmToolkit.AccessMultipleDatabaseWithAdoNet)
 - [Log](https://github.com/pauloanalista/prmToolkit.Log)
 - [Faker](https://github.com/pauloanalista/prmToolkit.Faker)
+- [Instagram](https://github.com/pauloanalista/prmToolkit.Instagram)
+
 
 
 
