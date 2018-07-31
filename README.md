@@ -15,7 +15,7 @@ OBS: Devido a solução conter vários projetos, resolvi separa-los em outros re
 - [Log](https://github.com/pauloanalista/prmToolkit.Log)
 - [Faker](https://github.com/pauloanalista/prmToolkit.Faker)
 - [Instagram](https://github.com/pauloanalista/prmToolkit.Instagram)
-
+- [Configuration](https://github.com/pauloanalista/prmToolkit.Configuration)
 
 
 
